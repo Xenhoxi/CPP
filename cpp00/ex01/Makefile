@@ -6,18 +6,20 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2023/11/02 22:55:46 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/11/02 23:49:30 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra
 
-SOURCES = megaphone.cpp
+SOURCES = 	main.cpp \
+			Contact.class.cpp \
+			PhoneBook.class.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CPP = megaphone
+CPP = contact
 
 INCLUDES_DIR = includes/
 
