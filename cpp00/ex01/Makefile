@@ -6,12 +6,12 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2023/11/02 23:49:30 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/11/07 12:17:39 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = g++
-CXXFLAGS = -Wall -Werror -Wextra
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SOURCES = 	main.cpp \
 			Contact.class.cpp \

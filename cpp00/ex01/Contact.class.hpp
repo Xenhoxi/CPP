@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:41:25 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/04 20:49:35 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:41:57 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@ class	Contact
 public:
 	Contact(void);
 	~Contact(void);
-	char	*get_info(char *str);
 	void	set_user(void);
-	void	get_user(void) const;
+	void	GetUser(void) const;
+	int		GetIndex(void) const;
+	int		GetNbContact(void) const;
 private:
-	int			index;
-	char		*_firstname;
-	char		*_lastname;
-	char		*_nickname;
-	char		*_phone;
-	char		*_secret;
+	int			_index;
+	char		_firstname[512];
+	char		_lastname[512];
+	char		_nickname[512];
+	char		_phone[512];
+	char		_secret[512];
+	static	int	_NbContact;
 };
