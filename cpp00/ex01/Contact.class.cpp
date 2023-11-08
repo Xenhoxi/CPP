@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:48:17 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/08 11:58:39 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/08 16:02:08 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int	Contact::GetIndex(void) const
 void	Contact::set_user(void)
 {
 	this->_index = this->GetNbContact();
-	Contact::_NbContact++;
+	if (Contact::_NbContact < 8)
+		Contact::_NbContact++;
 	std::cout << "Firstname : ";
 	std::cin >> this->_firstname;
 	std::cout << "Lastname : ";
@@ -50,9 +51,30 @@ void	Contact::set_user(void)
 void	Contact::GetUser(void) const
 {
 	std::cout << std::right << std::setw(10) << this->_index  << "|";
-	std::cout << std::right << std::setw(10) << this->_firstname << "|";
-	std::cout << std::right << std::setw(10) << this->_lastname << "|";
-	std::cout << std::right << std::setw(10) << this->_nickname << std::endl;
+	this->PrintUser(this->_firstname);
+	std::cout << "|";
+	this->PrintUser(this->_lastname);
+	std::cout << "|";
+	this->PrintUser(this->_nickname);
+	std::cout << std::endl;
+}
+
+void	Contact::PrintUser(std::string str) const
+{
+	if (str.length() <= 9)
+		std::cout << std::right << std::setw(10) << str.substr(0, 10);
+	else
+		std::cout << std::right << std::setw(9) << str.substr(0, 9) << ".";
+}
+
+void	Contact::PrintAllInfos(void) const
+{
+	std::cout << "Index : " << this->_index << std::endl;
+	std::cout << "Firstname : " << this->_firstname << std::endl;
+	std::cout << "Lastname : " << this->_lastname << std::endl;
+	std::cout << "Nickname : " << this->_nickname << std::endl;
+	std::cout << "Phone number : " << this->_phone << std::endl;
+	std::cout << "Darkest secret : " << this->_secret << std::endl;
 }
 
 int Contact::GetNbContact(void) const

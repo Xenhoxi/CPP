@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:34:41 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/08 00:42:42 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/08 15:55:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,42 @@ void	PhoneBook::SetContact(void)
 	this->MyContact[index].set_user();
 }
 
+int	PhoneBook::IsNumber(const char *str) const
+{
+	int	i = -1;
+
+	while (str[++i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+	}
+	return (1);
+}
+
 void	PhoneBook::Search(void) const
 {
 	int	i = -1;
+	std::string input;
 
 	while (++i < 8)
 	{
 		if (this->MyContact[i].GetIndex() >= 0)
 			this->MyContact[i].GetUser();
 	}
+	std::cout << "Enter the index of the Contact to display : ";
+	std::cin >> input;
+	if (this->IsNumber(input.c_str()))
+	{
+		if (std::atoi(input.c_str()) < 8 && std::atoi(input.c_str()) >= 0)
+		{
+			if (MyContact[std::atoi(input.c_str())].GetIndex() == -1)
+			{
+				std::cout << "Invalid index !" << std::endl;
+				return ;
+			}
+			MyContact[std::atoi(input.c_str())].PrintAllInfos();
+			return ;
+		}
+	}
+	std::cout << "Invalid Index !" << std::endl;
 }
