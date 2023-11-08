@@ -6,12 +6,11 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:34:41 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/07 14:41:31 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/08 00:42:42 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.class.hpp"
-#include <iostream>
 
 PhoneBook::PhoneBook(void)
 {
@@ -63,6 +62,7 @@ void	PhoneBook::Search(void) const
 
 	while (++i < 8)
 	{
-		this->MyContact[i].GetUser();
+		if (this->MyContact[i].GetIndex() >= 0)
+			this->MyContact[i].GetUser();
 	}
 }
