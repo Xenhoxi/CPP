@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2023/11/09 14:19:18 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/11/09 21:22:38 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SOURCES =	tests.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CPP = dreamjob
+CPP = lostfile
 
 INCLUDES_DIR = includes/
 
