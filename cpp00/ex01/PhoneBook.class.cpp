@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:34:41 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/09 12:32:04 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:46:51 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,16 @@ int	PhoneBook::FindOldestContact(void) const
 
 void	PhoneBook::SetContact(void)
 {
+	int	i = -1;
 	int	index;
 
 	index = this->IsFreeContact();
 	if (index == -1)
 		index = this->FindOldestContact();
 	this->MyContact[index].set_user();
+	if (this->MyContact->GetNbContact() == 8)
+		while (++i < 8)
+			this->MyContact[i].ReduceIndex();
 }
 
 int	PhoneBook::IsNumber(const char *str) const
