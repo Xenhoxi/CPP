@@ -6,13 +6,13 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:48:17 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/08 16:02:08 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:11:17 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.class.hpp"
 
-int Contact::_NbContact = 0;
+int Contact::_NbContact = -1;
 
 Contact::Contact(void) 
 {
@@ -32,9 +32,10 @@ int	Contact::GetIndex(void) const
 
 void	Contact::set_user(void)
 {
+	Contact::_NbContact++;
+	if (Contact::_NbContact >= 8)
+		this->_NbContact = 0;
 	this->_index = this->GetNbContact();
-	if (Contact::_NbContact < 8)
-		Contact::_NbContact++;
 	std::cout << "Firstname : ";
 	std::cin >> this->_firstname;
 	std::cout << "Lastname : ";

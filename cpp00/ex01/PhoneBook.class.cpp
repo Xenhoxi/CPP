@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:34:41 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/08 15:55:30 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:32:04 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,13 @@ int	PhoneBook::FindOldestContact(void) const
 
 	while (++i < 8)
 	{
-		if (this->MyContact[i].GetIndex() == 0)
-			return (i);
+		if (this->MyContact[i].GetIndex() == this->MyContact->GetNbContact())
+		{
+			if (i + 1 < 7)
+				return (i + 1);
+			else
+				return (0);
+		}
 	}
 	return (-1);
 }
