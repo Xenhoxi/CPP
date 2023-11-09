@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:48:17 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/08 16:02:08 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/08 23:40:55 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ int	Contact::GetIndex(void) const
 
 void	Contact::set_user(void)
 {
-	this->_index = this->GetNbContact();
-	if (Contact::_NbContact < 8)
+	if (Contact::_NbContact < 7)
+		this->_index = this->GetNbContact();
+	if (Contact::_NbContact < 7)
 		Contact::_NbContact++;
 	std::cout << "Firstname : ";
 	std::cin >> this->_firstname;
@@ -80,4 +81,9 @@ void	Contact::PrintAllInfos(void) const
 int Contact::GetNbContact(void) const
 {
 	return (Contact::_NbContact);
+}
+
+void	Contact::ReduceIndex(void)
+{
+	this->_index--;
 }
