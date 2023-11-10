@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:15:36 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/08 23:13:29 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/10 21:02:41 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,16 @@ int	main(void)
 	std::string	buff;
 	PhoneBook	phonebook;
 	
-	while (!is_exit(buff.c_str()))
+	std::cout << START_MSG;
+	while (buff != "EXIT")
 	{
-		std::cout << START_MSG;
-		std::cin >> buff;
-		if (!std::strncmp(buff.c_str(), "ADD", 3))
+		std::getline(std::cin, buff);
+		if (buff == "ADD")
 			phonebook.SetContact();
-		if (!std::strncmp(buff.c_str(), "SEARCH", 7))
+		else if (buff == "SEARCH")
 			phonebook.Search();
+		else
+			std::cout << "Invalid command !" << buff << std::endl;
 	}
 	return (0);
 }

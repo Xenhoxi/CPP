@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:34:41 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/09 12:46:51 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/10 21:03:48 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,14 @@ void	PhoneBook::Search(void) const
 			if (MyContact[std::atoi(input.c_str())].GetIndex() == -1)
 			{
 				std::cout << "Invalid index !" << std::endl;
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				return ;
 			}
 			MyContact[std::atoi(input.c_str())].PrintAllInfos();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			return ;
 		}
 	}
 	std::cout << "Invalid Index !" << std::endl;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
