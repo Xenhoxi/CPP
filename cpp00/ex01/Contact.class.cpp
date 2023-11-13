@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:48:17 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/10 20:58:14 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/14 00:39:14 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,26 +49,9 @@ void	Contact::set_user(void)
 	std::cin >> this->_phone;
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::cout << "Darkest secret : ";
-	std::cin >> this->_secret;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::getline(std::cin, this->_secret);
 	std::cout << "Contact created !" << std::endl;
 }
-
-// Contact::_NbContact++;
-// 	if (Contact::_NbContact >= 8)
-// 		this->_NbContact = 0;
-// 	this->_index = this->GetNbContact();
-// 	std::cout << "Firstname : ";
-// 	std::getline(std::cin, this->_firstname);
-// 	std::cout << "Lastname : ";
-// 	std::getline(std::cin, this->_lastname);
-// 	std::cout << "Nickname : ";
-// 	std::getline(std::cin, this->_nickname);
-// 	std::cout << "Phone number : ";
-// 	std::getline(std::cin, this->_phone);
-// 	std::cout << "Darkest secret : ";
-// 	std::getline(std::cin, this->_secret);
-// 	std::cout << "Contact created !" << std::endl;
 
 void	Contact::GetUser(void) const
 {

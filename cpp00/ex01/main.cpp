@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:15:36 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/10 21:02:41 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/14 00:35:20 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 		else if (buff == "SEARCH")
 			phonebook.Search();
 		else
-			std::cout << "Invalid command !" << buff << std::endl;
+			std::cout << "Invalid command !" << std::endl;
 	}
 	return (0);
 }

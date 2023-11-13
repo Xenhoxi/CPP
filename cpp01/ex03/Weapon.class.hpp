@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.class.cpp                                   :+:      :+:    :+:   */
+/*   Weapon.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 22:38:40 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/13 20:36:11 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/11/10 21:11:04 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/11/13 21:11:58 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#ifndef WEAPON_CLASS_HPP
+# define WEAPON_CLASS_HPP
 
-Zombie::Zombie(void)
-{
-	return ;
-}
+#include <iomanip>
 
-Zombie::~Zombie(void)
+class	Weapon
 {
-	return ;
-}
+public:
+	Weapon(std::string _type);
+	~Weapon(void);
+	void				setType(std::string newtype);
+	const std::string&	getType(void);
+private:
+	std::string			_type;
+};
 
-void	Zombie::announce(void)
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void	Zombie::setName(std::string name)
-{
-	this->_name = name;
-	return ;
-}
+#endif

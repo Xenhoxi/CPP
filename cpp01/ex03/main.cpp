@@ -5,41 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 22:42:36 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/10 20:10:42 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/11/09 22:38:45 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/11/13 21:11:03 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.class.hpp"
+#include "HumanB.class.hpp"
+#include "Weapon.class.hpp"
+#include <iomanip>
 #include <iostream>
-#include <cctype>
 
-void	print_to_upper(char *str)
+int	main(void)
 {
-	char c;
-
-	while (*str)
 	{
-		if (*str >= 'a' && *str <= 'z')
-			c = std::toupper(*str);
-		else
-			c = *str;
-		std::cout << c;
-		str++;
-	}
-}
+		Weapon	club = Weapon("Crude spike club");
 
-int	main(int argc, char **argv)
-{
-	int	i;
-	
-	i = 0;
-	if (argc <= 1)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
+		HumanA	bob("Bob", club);
+		bob.attack();
+		club.setType("Baseball club");
+		bob.attack();
 	}
-	while (argv[++i])
-		print_to_upper(argv[i]);
-	std::cout << std::endl;
+	{
+		Weapon	club = Weapon("Crude spike club");
+
+		HumanB	jim("jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("Baseball club");
+		jim.attack();
+	}
 	return (0);
 }
