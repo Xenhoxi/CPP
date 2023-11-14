@@ -6,11 +6,12 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:34:58 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/13 21:22:03 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/14 12:31:47 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.class.hpp"
+#include "iostream"
 
 Weapon::Weapon(std::string type) : _type(type)
 {

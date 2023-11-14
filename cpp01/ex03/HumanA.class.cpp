@@ -6,13 +6,13 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:42:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/13 21:20:47 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/14 12:35:00 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.class.hpp"
 
-HumanA::HumanA(std::string name, Weapon new_weapon) : _name(name), _weapon(new_weapon)
+HumanA::HumanA(std::string name, Weapon &new_weapon) : _name(name), _weapon(new_weapon)
 {
 	return ;
 }

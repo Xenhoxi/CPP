@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 21:17:24 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/13 21:09:41 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/14 12:40:01 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ public:
 	HumanB(std::string name);
 	~HumanB(void);
 	void		attack(void);
-	void		setWeapon(Weapon weapon);
+	void		setWeapon(Weapon &weapon);
 private:
 	std::string	_name;
-	Weapon		_weapon;
+	Weapon		*_weapon;
 };
 
 #endif
