@@ -6,11 +6,12 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:36:55 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/15 13:53:43 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:28:33 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iomanip>
+#include <iostream>
 
 class Harl
 {
