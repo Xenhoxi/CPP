@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2023/11/15 13:48:57 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/11/16 13:13:09 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SOURCES =	main.cpp \
+			Harl.class.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

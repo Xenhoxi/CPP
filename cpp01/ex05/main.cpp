@@ -6,13 +6,20 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 22:38:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/15 13:50:49 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/18 22:58:26 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "Harl.class.hpp"
 
 int	main(void)
 {
+	Harl harl;
+
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	harl.complain("UNKNOWN");
 	return (0);
 }
