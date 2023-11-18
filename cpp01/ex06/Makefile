@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2023/11/18 23:04:09 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/11/18 23:04:00 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SOURCES =	main.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CPP = harl
+CPP = harlFilter
 
 INCLUDES_DIR = includes/
 
