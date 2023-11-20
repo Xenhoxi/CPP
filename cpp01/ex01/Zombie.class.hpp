@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 22:38:43 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/10 15:27:47 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/16 02:18:25 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ private:
 	std::string	_name;
 };
 
-Zombie	*zombieHorde(int n, std::string name);
+Zombie	*zombieHorde(int N, std::string name);
 
 #endif
