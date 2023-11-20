@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.class.cpp                                    :+:      :+:    :+:   */
+/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/20 15:09:10 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/11/20 14:08:20 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/11/20 14:45:24 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.class.hpp"
+#ifndef FIXED_CLASS_HPP
+# define FIXED_CLASS_HPP
 
-const static int _bit_width = 8;
+#include <iostream>
 
-Fixed::Fixed(void) : _fixe_number(0)
+class Fixed
 {
-	std::cout << "Default constructor called" << std::endl;
-}
+public:
+	Fixed(void);
+	Fixed(const Fixed &ref);
+	~Fixed(void);
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+private:
+	int	_fixe_number;
 
-Fixed::Fixed(const Fixed &ref)
-{
-	std::cout << "Default constructor called" << std::endl;
-}
+	static const int _bit_width;
+};
 
-Fixed::~Fixed(void)
-{
-	std::cout << "Destructor called" << std::endl;
-}
+#endif

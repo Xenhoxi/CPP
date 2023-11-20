@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.class.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/20 15:09:10 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/11/20 14:04:02 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/11/20 14:23:24 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.class.hpp"
 
-const static int _bit_width = 8;
-
-Fixed::Fixed(void) : _fixe_number(0)
+int	main(void)
 {
-	std::cout << "Default constructor called" << std::endl;
-}
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
 
-Fixed::Fixed(const Fixed &ref)
-{
-	std::cout << "Default constructor called" << std::endl;
-}
-
-Fixed::~Fixed(void)
-{
-	std::cout << "Destructor called" << std::endl;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return (0);
 }
