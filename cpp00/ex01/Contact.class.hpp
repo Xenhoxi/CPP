@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:41:25 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/08 23:26:52 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:45:06 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@ class	Contact
 public:
 	Contact(void);
 	~Contact(void);
-	void	set_user(void);
 	void	GetUser(void) const;
+	void	set_user(void);
 	int		GetIndex(void) const;
 	int		GetNbContact(void) const;
-	void	PrintUser(std::string str) const;
-	void	PrintAllInfos(void) const;
 	void	ReduceIndex(void);
+	void	PrintAllInfos(void) const;
 private:
+	void	PrintUser(std::string str) const;
+
 	int			_index;
 	std::string	_firstname;
 	std::string	_lastname;

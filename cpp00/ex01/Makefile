@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2023/11/07 12:17:39 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/11/21 14:26:03 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SOURCES = 	main.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CPP = contact
+CPP = phoneBook
 
 INCLUDES_DIR = includes/
 

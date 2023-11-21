@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:36:35 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/09 21:19:35 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/21 16:16:26 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	Account::_displayTimestamp(void)
 {
 	time_t		date;
 	struct tm	datetime;
-	char		format[18];
+	char		format[19];
 
 	date = time(NULL);
 	datetime = *localtime(&date);
-	strftime(format, 17, "[%Y%m%d_%H%M%S]", &datetime);
+	strftime(format, 18, "[%Y%m%d_%H%M%S]", &datetime);
 	std::cout << format << " ";
 }
 
@@ -89,7 +89,7 @@ void	Account::makeDeposit(int deposit)
 {
 	this->_nbDeposits++;
 	Account::_totalNbDeposits++;
-	this->_displayTimestamp();
+	Account::_displayTimestamp();
 	std::cout << "index:" << (Account::_accountIndex - 1) << ";";
 	std::cout << "p_amount:" << Account::_amount << ";";
 	std::cout << "deposit:" << deposit << ";";
@@ -102,7 +102,7 @@ void	Account::makeDeposit(int deposit)
 
 bool	Account::makeWithdrawal(int withdrawal)
 {
-	this->_displayTimestamp();
+	Account::_displayTimestamp();
 	std::cout << "index:" << (Account::_accountIndex - 1) << ";";
 	std::cout << "p_amount:" << Account::_amount << ";";
 	if ((this->_amount - withdrawal) > 0)

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:48:17 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/14 00:39:14 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:28:03 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int Contact::_NbContact = -1;
 
-Contact::Contact(void) 
+Contact::Contact(void) : _index(-1)
 {
-	this->_index = -1;
 	return ;
 }
 
@@ -37,17 +36,13 @@ void	Contact::set_user(void)
 		this->_NbContact = 0;
 	this->_index = this->GetNbContact();
 	std::cout << "Firstname : ";
-	std::cin >> this->_firstname;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::getline(std::cin, this->_firstname);
 	std::cout << "Lastname : ";
-	std::cin >> this->_lastname;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::getline(std::cin, this->_lastname);
 	std::cout << "Nickname : ";
-	std::cin >> this->_nickname;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::getline(std::cin, this->_nickname);
 	std::cout << "Phone number : ";
-	std::cin >> this->_phone;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::getline(std::cin, this->_phone);
 	std::cout << "Darkest secret : ";
 	std::getline(std::cin, this->_secret);
 	std::cout << "Contact created !" << std::endl;
