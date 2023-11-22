@@ -18,6 +18,7 @@
 class Fixed
 {
 public:
+	Fixed& operator=(const Fixed &fixed);
 	Fixed(void);
 	Fixed(const Fixed &ref);
 	~Fixed(void);

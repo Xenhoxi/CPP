@@ -18,7 +18,7 @@ SOURCES =	main.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CPP = Fixed
+CPP = roundf
 
 INCLUDES_DIR = includes/
 
