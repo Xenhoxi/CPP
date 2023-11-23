@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:15:36 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/21 16:15:27 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:06:02 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ int	main(void)
 	PhoneBook	phonebook;
 	
 	std::cout << START_MSG;
-	while (buff != "EXIT")
+	while (buff == "")
 	{
 		std::getline(std::cin, buff);
 		if (buff == "ADD")
 			phonebook.SetContact();
 		else if (buff == "SEARCH")
 			phonebook.Search();
-		else if(buff == "" || buff == "EXIT")
+		else if(buff == "EXIT")
 			break ;
 		else
 			std::cout << "Invalid command !" << std::endl;
