@@ -6,14 +6,15 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:04:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/20 14:23:24 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:19:00 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.class.hpp"
 #include <iostream>
 
-main( void ) {
+int main(void)
+{
 	Fixed		a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );

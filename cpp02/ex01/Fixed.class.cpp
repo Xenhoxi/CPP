@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/20 15:09:10 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:27:19 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed(void) : _fixeNumber(0)
 Fixed::Fixed(const Fixed &ref)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_fixe_number = ref.getRawBits();
+	this->_fixeNumber = ref.getRawBits();
 }
 
 Fixed::Fixed(const int integer) : _fixeNumber(integer)
@@ -35,16 +35,10 @@ Fixed::Fixed(const float newFloat) : _fixeNumber(newFloat)
 	std::cout << "Float constructor called" << std::endl;
 }
 
-Fixed& Fixed::operator=(const Fixed &fixed)
+Fixed& Fixed::operator=(const Fixed &rhs)
 {
 	std::cout << "Copy assignment operator overload" << std::endl;
-	this->_fixe_number = fixed.getRawBits();
-	return (*this);
-}
-
-Fixed& Fixed::operator<<(const Fixed &fixed)
-{
-	_fixe_number = _fixe_number << this->_nbBit;
+	this->_fixeNumber = rhs.getRawBits();
 	return (*this);
 }
 
@@ -64,3 +58,18 @@ void	Fixed::setRawBits(int const raw)
 	this->_fixeNumber = raw;
 }
 
+float	Fixed::toFloat(void) const
+{
+	return (this->_fixeNumber << _nbBit);
+}
+
+int	Fixed::toInt(void) const
+{
+	return (this->_fixeNumber >> _nbBit);
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &rhs)
+{
+	out << rhs.getRawBits();
+	return (out);
+}
