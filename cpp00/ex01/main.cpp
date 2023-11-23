@@ -13,27 +13,21 @@
 #include <iostream>
 #include "PhoneBook.class.hpp"
 
-int	is_exit(const char *buff)
-{
-	if (!std::strncmp(buff, "EXIT", 5))
-		return (1);
-	return (0);
-}
-
 int	main(void)
 {
 	std::string	buff;
 	PhoneBook	phonebook;
 	
 	std::cout << START_MSG;
-	while (buff != "EXIT")
+	buff = "";
+	while (buff == "")
 	{
 		std::getline(std::cin, buff);
 		if (buff == "ADD")
 			phonebook.SetContact();
 		else if (buff == "SEARCH")
 			phonebook.Search();
-		else if(buff == "" || buff == "EXIT")
+		else if(buff == "EXIT")
 			break ;
 		else
 			std::cout << "Invalid command !" << std::endl;
