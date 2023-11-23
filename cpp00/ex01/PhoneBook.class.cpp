@@ -65,7 +65,7 @@ void	PhoneBook::SetContact(void)
 			this->MyContact[i].ReduceIndex();
 }
 
-int	PhoneBook::IsNumber(const char *str) const
+int	PhoneBook::IsNumber(std::string str) const
 {
 	int	i = -1;
 
@@ -81,6 +81,7 @@ void	PhoneBook::Search(void) const
 {
 	int	i = -1;
 	std::string input;
+	int	intInput = 0;
 
 	while (++i < 8)
 	{
@@ -89,21 +90,20 @@ void	PhoneBook::Search(void) const
 	}
 	std::cout << "Enter the index of the Contact to display : ";
 	std::cin >> input;
-	if (this->IsNumber(input.c_str()))
+
+	if (this->IsNumber(input))
 	{
-		if (std::atoi(input.c_str()) < 8 && std::atoi(input.c_str()) >= 0)
+		intInput = atoi(input.c_str());
+		if (intInput < 8 && intInput >= 0)
 		{
-			if (MyContact[std::atoi(input.c_str())].GetIndex() == -1)
+			if (MyContact[intInput].GetIndex() == -1)
 			{
 				std::cout << "Invalid index !" << std::endl;
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				return ;
 			}
-			MyContact[std::atoi(input.c_str())].PrintAllInfos();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			MyContact[intInput].PrintAllInfos();
 			return ;
 		}
 	}
 	std::cout << "Invalid Index !" << std::endl;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

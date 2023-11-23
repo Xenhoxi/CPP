@@ -6,19 +6,12 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:15:36 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/23 17:06:02 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/23 17:06:40 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "PhoneBook.class.hpp"
-
-int	is_exit(const char *buff)
-{
-	if (!std::strncmp(buff, "EXIT", 5))
-		return (1);
-	return (0);
-}
 
 int	main(void)
 {
@@ -26,6 +19,7 @@ int	main(void)
 	PhoneBook	phonebook;
 	
 	std::cout << START_MSG;
+	buff = "";
 	while (buff == "")
 	{
 		std::getline(std::cin, buff);

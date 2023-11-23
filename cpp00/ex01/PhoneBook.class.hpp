@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
 #include "Contact.class.hpp"
+#include <stdlib.h> 
 
 #define START_MSG "----------- PHONE BOOK USAGE -----------\n|     ADD to create a new contact      |\n|  SEARCH for looking in your contact  |\n----------------------------------------\n";
 
@@ -26,6 +25,6 @@ public:
 private:
 	int		IsFreeContact(void) const;
 	int		FindOldestContact(void) const;
-	int		IsNumber(const char *str) const;
+	int		IsNumber(std::string str) const;
 	Contact	MyContact[8];
 };
