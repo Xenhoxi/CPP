@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:08:20 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/22 20:17:46 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/24 13:12:42 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 class Fixed
 {
 public:
-	Fixed& operator=(const Fixed &rhs);
+	Fixed&	operator=(const Fixed &rhs);
+	bool	operator>(const Fixed &rhs);
 	Fixed(void);
 	Fixed(const Fixed &ref);
 	Fixed(const int integer);

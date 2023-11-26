@@ -32,6 +32,7 @@ Fixed::Fixed(const int integer) : _fixeNumber((integer << Fixed::_nbBit))
 
 Fixed::Fixed(const float newFloat) : _fixeNumber(newFloat)
 {
+	this->_fixeNumber = po
 	std::cout << "Float constructor called" << _fixeNumber << std::endl;
 }
 
