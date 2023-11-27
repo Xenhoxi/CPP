@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   ClapTrap.class.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 23:41:25 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/27 11:54:33 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/11/20 14:08:20 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/11/27 22:55:51 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
-#include <string>
+#ifndef CLAPTRAP_CLASS_HPP
+# define CLAPTRAP_CLASS_HPP
 
-class	Contact
+#include <iostream>
+
+class ClapTrap
 {
 public:
-	Contact(void);
-	~Contact(void);
-	void	GetUser(void) const;
-	void	set_user(void);
-	int		GetIndex(void) const;
-	int		GetNbContact(void) const;
-	void	ReduceIndex(void);
-	void	PrintAllInfos(void) const;
+	ClapTrap(std::string name);
+	ClapTrap(const ClapTrap &ref);
+	~ClapTrap(void);
+	ClapTrap& operator=(const ClapTrap &rhs);
+	void	attack(const std::string &target);
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
 private:
-	void	PrintUser(std::string str) const;
-
-	int			_index;
-	std::string	_firstname;
-	std::string	_lastname;
-	std::string	_nickname;
-	std::string	_phone;
-	std::string	_secret;
-	static	int	_NbContact;
+	std::string		_name;
+	unsigned int	_health;
+	unsigned int	_energy;
+	unsigned int	_attack;
 };
+
+#endif
