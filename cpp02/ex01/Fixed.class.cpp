@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/23 17:02:32 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/26 22:40:40 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ Fixed::Fixed(const int integer) : _fixeNumber((integer << Fixed::_nbBit))
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float newFloat) : _fixeNumber(newFloat)
+Fixed::Fixed(const float newFloat)
 {
-	this->_fixeNumber = po
-	std::cout << "Float constructor called" << _fixeNumber << std::endl;
+	this->_fixeNumber = (newFloat * std::pow(2, Fixed::_nbBit) + 0.5);
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed &rhs)
 {
-	std::cout << "Copy assignment operator overload" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	this->_fixeNumber = rhs.getRawBits();
 	return (*this);
 }
@@ -60,7 +60,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (this->getRawBits() << Fixed::_nbBit * 0);
+	return (this->getRawBits() / std::pow(2, Fixed::_nbBit));
 }
 
 int	Fixed::toInt(void) const
