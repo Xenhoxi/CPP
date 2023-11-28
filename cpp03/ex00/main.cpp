@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:04:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/27 22:58:27 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:04:56 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 int	main(void)
 {
-	ClapTrap a("test");
-	ClapTrap b( a );
+	ClapTrap 	a("Pute");
+	ClapTrap	b("Caca");
+	a.attack("Humain");
+	a.takeDamage(10);
+	a.beRepaired(10);
+	b.attack("Voiture");
+	b.takeDamage(10);
 	return (0);
 }
