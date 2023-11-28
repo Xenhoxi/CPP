@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:15:36 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/23 17:09:55 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:16:06 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ int	main(void)
 		else if(buff == "EXIT")
 			break ;
 		else
-		{
-			std::cout << buff << std::endl;
 			std::cout << "Invalid command !" << std::endl;
-		}
 		buff = "";
 	}
 	return (0);
