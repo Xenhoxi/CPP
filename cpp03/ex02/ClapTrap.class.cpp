@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/28 11:55:14 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:03:56 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ const static int _bit_width = 8;
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attack(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &ref)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 	_name = ref._name;
 	_health = ref._health;
 	_energy = ref._energy;
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(const ClapTrap &ref)
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
 {
-	std::cout << "Copy assignment operator overload" << std::endl;
+	std::cout << "ClapTrap Copy assignment operator overload" << std::endl;
 	_name = rhs._name;
 	_health = rhs._health;
 	_energy = rhs._energy;
@@ -64,7 +64,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energy == 0)
-		std::cout << "ClapTrap " << this->_name << "don't have enought energy point to be repaired " << std::endl;
+		std::cout << "ClapTrap " << this->_name << "don't have enought energy point to be repaired !" << std::endl;
 	else
 	{
 		this->_health += amount;
@@ -75,5 +75,5 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
