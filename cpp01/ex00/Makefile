@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2023/11/10 15:12:27 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/11/29 11:31:05 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,17 +22,10 @@ OBJECTS = $(SOURCES:.cpp=.o)
 
 CPP = Brainz
 
-INCLUDES_DIR = includes/
-
-####################COMPILATION STYLING####################
-
-PRINT_NAME    := $(CPP)
-PRINT_PREFIX  := \033[1m\033[38;5;240m[\033[0m\033[38;5;250m$(PRINT_NAME)\033[1m\033[38;5;240m] \033[38;5;105m~\033[0m
-
 all: $(CPP)
 
 %.o: %.cpp
-	@$(CXX) $(CXXFLAGS) -c $< -o $@ -I $(INCLUDES_DIR)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(CPP): $(OBJECTS)
 	@$(CXX) $(CXXFLAGS) -o $(CPP) $(OBJECTS)
@@ -44,8 +37,5 @@ fclean: clean
 	@rm -f $(CPP)
 
 re: fclean all
-
-.PHONY: all clean fclean re
-
 
 .PHONY: all clean fclean re
