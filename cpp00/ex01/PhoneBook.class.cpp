@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 23:34:41 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/28 18:19:21 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:03:54 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void	PhoneBook::Search(void) const
 	}
 	std::cout << "Enter the index of the Contact to display : ";
 	std::cin >> input;
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	if (this->IsNumber(input))
 	{
 		intInput = atoi(input.c_str());

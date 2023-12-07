@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 22:38:40 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/16 02:14:49 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:40:09 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Zombie::Zombie(void)
 
 Zombie::~Zombie(void)
 {
+	std::cout << "Zomibe delete" << std::endl;
 	return ;
 }
 

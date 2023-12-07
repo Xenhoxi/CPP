@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 22:38:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/15 13:40:54 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:35:47 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	main(void)
 {
-	Zombie	*zombar;
+	Zombie	*zomb;
 
-	zombar = newZombie("Glenn");
-	zombar->announce();
-	delete zombar;
-	randomChump("Maggie");
+	zomb = newZombie("Zombie #1");
+	zomb->announce();
+	randomChump("Zombie #2");
+	delete zomb;
 	return (0);
 }
