@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:31:07 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/06 13:55:24 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:39:32 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Animal
 public:
 	Animal(void);
 	Animal(const Animal &ref);
-	~Animal(void);
+	virtual ~Animal(void);
 	Animal& operator=(const Animal &rhs);
 	std::string	getType(void) const;
-	void		makeSound(void) const;
+	virtual void	makeSound(void) const;
 protected:
 	std::string	_type;
 };

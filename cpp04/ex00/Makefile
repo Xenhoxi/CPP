@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2023/12/06 13:56:05 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/12/08 16:16:11 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ SOURCES =	main.cpp \
 			Animal.class.cpp \
 			Cat.class.cpp \
 			Dog.class.cpp \
+			WrongAnimal.class.cpp \
+			WrongCat.class.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

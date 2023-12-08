@@ -6,13 +6,15 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:04:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/06 14:08:39 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:27:06 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.class.hpp"
 #include "Cat.class.hpp"
 #include "Dog.class.hpp"
+#include "WrongAnimal.class.hpp"
+#include "WrongCat.class.hpp"
 
 int	main(void)
 {
@@ -36,5 +38,15 @@ int	main(void)
 	delete j;
 	delete cat;
 	delete dog;
+
+	const WrongAnimal* wrongAnimal = new WrongAnimal();
+	const WrongCat* wrongCat = new WrongCat();
+	
+	wrongAnimal->makeSound();
+	wrongCat->makeSound();
+	
+	delete wrongAnimal;
+	delete wrongCat;
+
 	return 0;
 }
