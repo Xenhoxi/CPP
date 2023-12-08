@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:58:01 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/28 12:58:25 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/08 14:15:50 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ScavTrap::attack(const std::string &target)
 	else
 	{
 		_energy--;
-		std::cout << "ClapTrap " << _name << " attacks " << target << " , causing " << _attack << " points of damage ! ";
+		std::cout << "ClapTrap " << _name << " is now attacking " << target << " , dealing " << _attack << " points of damage ! ";
 		std::cout << _energy << " energy point(s) left ! " << std::endl;
 	}
 }
