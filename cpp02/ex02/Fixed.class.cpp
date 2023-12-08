@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/27 11:42:19 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/08 13:08:56 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,22 +60,34 @@ Fixed& Fixed::operator=(const Fixed &rhs)
 
 bool	Fixed::operator<(const Fixed &rhs)
 {
-	return (this->getRawBits() < rhs.getRawBits());
+	if (this->getRawBits() < rhs.getRawBits())
+		return (1);
+	else
+		return (0);
 }
 
 bool	Fixed::operator>(const Fixed &rhs)
 {
-	return (this->getRawBits() > rhs.getRawBits());
+	if (this->getRawBits() > rhs.getRawBits())
+		return (1);
+	else
+		return (0);
 }
 
 bool	Fixed::operator>=(const Fixed &rhs)
 {
-	return (this->getRawBits() >= rhs.getRawBits());
+	if (this->getRawBits() >= rhs.getRawBits())
+		return (1);
+	else
+		return (0);
 }
 
 bool	Fixed::operator<=(const Fixed &rhs)
 {
-	return (this->getRawBits() <= rhs.getRawBits());
+	if (this->getRawBits() <= rhs.getRawBits())
+		return (1);
+	else
+		return (0);
 }
 
 bool	Fixed::operator==(const Fixed &rhs)
