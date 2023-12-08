@@ -6,13 +6,13 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/20 15:09:10 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/08 12:18:25 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.class.hpp"
 
-const static int _bit_width = 8;
+const int Fixed::_bit_width = 8;
 
 Fixed::Fixed(void) : _fixe_number(0)
 {

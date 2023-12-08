@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:04:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/23 15:26:46 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/08 12:21:06 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 int	main(void)
 {
 	Fixed a;
-	Fixed b( a );
+	std::cout << a.getRawBits() << std::endl;
+	a.setRawBits(3);
+	std::cout << a.getRawBits() << std::endl;
+	Fixed b(a);
+	std::cout << b.getRawBits() << std::endl;
 	Fixed c;
 	c = b;
 
