@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:08:55 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/08 16:39:02 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:44:45 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	virtual ~WrongAnimal(void);
 	WrongAnimal& operator=(const WrongAnimal &rhs);
 	std::string	getType(void) const;
-	virtual void	makeSound(void) const;
+	void	makeSound(void) const;
 protected:
 	std::string	_type;
 };

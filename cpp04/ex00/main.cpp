@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:04:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/08 16:27:06 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:45:46 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(void)
 	delete dog;
 
 	const WrongAnimal* wrongAnimal = new WrongAnimal();
-	const WrongCat* wrongCat = new WrongCat();
+	const WrongAnimal* wrongCat = new WrongCat();
 	
 	wrongAnimal->makeSound();
 	wrongCat->makeSound();

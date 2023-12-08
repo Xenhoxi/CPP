@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:08:31 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/08 16:38:56 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:44:52 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class WrongCat : public WrongAnimal
 {
 public:
 	WrongCat(void);
-	virtual ~WrongCat(void);
+	~WrongCat(void);
 	void makeSound(void) const;
 };
 
