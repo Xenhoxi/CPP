@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:04:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/08 16:45:46 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/11 10:36:04 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,36 @@
 int	main(void)
 {
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const Cat* cat = new Cat();
-	const Dog* dog = new Dog();
 	std::cout << "meta is a " << meta->getType() << std::endl;
-	std::cout << "j is a " << j->getType() << std::endl;
-	std::cout << "i is a " << i->getType() << std::endl;
-	std::cout << "Cat is a " << cat->getType() << std::endl;
-	std::cout << "Dog is a " << dog->getType() << std::endl;
     meta->makeSound();
-	i->makeSound();
-	j->makeSound();
-	cat->makeSound();
-	dog->makeSound();
 	delete meta;
-	delete i;
+
+	const Animal* j = new Dog();
+	j->makeSound();
+	std::cout << "j is a " << j->getType() << std::endl;
 	delete j;
+
+	const Animal* i = new Cat();
+	i->makeSound();
+	std::cout << "i is a " << i->getType() << std::endl;
+	delete i;
+
+	const Cat* cat = new Cat();
+	std::cout << "Cat is a " << cat->getType() << std::endl;
+	cat->makeSound();
 	delete cat;
+
+	const Dog* dog = new Dog();
+	std::cout << "Dog is a " << dog->getType() << std::endl;
+	dog->makeSound();
 	delete dog;
 
 	const WrongAnimal* wrongAnimal = new WrongAnimal();
-	const WrongAnimal* wrongCat = new WrongCat();
-	
 	wrongAnimal->makeSound();
-	wrongCat->makeSound();
-	
 	delete wrongAnimal;
+	
+	const WrongAnimal* wrongCat = new WrongCat();
+	wrongCat->makeSound();
 	delete wrongCat;
 
 	return 0;
