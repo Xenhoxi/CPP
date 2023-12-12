@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:56:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/11 13:38:27 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/12 11:50:32 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Replace::~Replace(void)
 
 void	Replace::fillFile(void)
 {
-	std::ofstream	ofs(this->_filename.insert(this->_filename.length(),".replace"));
+	std::ofstream	ofs((this->_filename += ".replace").c_str());
 
 	ofs << this->_line;
 	ofs.close();
@@ -48,7 +48,7 @@ void	Replace::replaceOccurence(void)
 void	Replace::replaceString(void)
 {	
 	std::string		buff;
-	std::ifstream	ifs(this->_filename);
+	std::ifstream	ifs(this->_filename.c_str());
 
 	std::getline(ifs, buff);
 	if (!ifs.is_open())
@@ -66,3 +66,4 @@ void	Replace::replaceString(void)
 	ifs.close();
 	this->fillFile();
 }
+

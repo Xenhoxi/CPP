@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/08 14:12:55 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/11 14:26:50 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
 void	ClapTrap::attack(const std::string &target)
 {
 	if (this->_energy <= 0)
-		std::cout << "ClapTrap " << this->_name << " don't have enought energy point to be repaired " << std::endl;
+		std::cout << this->_name << " don't have enought energy point to be repaired " << std::endl;
 	else if (this->_health <= 0)
-		std::cout << "ClapTrap " << this->_name << " don't have enought health point to attack " << std::endl;
+		std::cout << this->_name << " don't have enought health point to attack " << std::endl;
 	else
 	{
 		_energy--;
-		std::cout << "ClapTrap " << _name << " attacks " << target << " , causing " << _attack << " points of damage ! ";
+		std::cout << _name << " attacks " << target << " , causing " << _attack << " points of damage ! ";
 		std::cout << _energy << " energy point(s) left ! " << std::endl;
 	}
 }
@@ -58,18 +58,18 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		this->_health = 0;
 	else
 		this->_health -= amount;
-	std::cout << "ClapTrap " << this->_name << " take " << amount << " points of damage ! He's now " << this->_health << " hp and " << this->_energy << " Energy point(s)"<< std::endl;
+	std::cout << this->_name << " take " << amount << " points of damage ! He's now " << this->_health << " hp and " << this->_energy << " Energy point(s)"<< std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energy == 0)
-		std::cout << "ClapTrap " << this->_name << "don't have enought energy point to be repaired " << std::endl;
+		std::cout << this->_name << "don't have enought energy point to be repaired " << std::endl;
 	else
 	{
 		this->_health += amount;
 		this->_energy--;
-		std::cout << "ClapTrap " << this->_name << " got " << amount << " hp ! total health is " << this->_health << " hp ! " << this->_energy << " Energy point(s) left"<< std::endl;
+		std::cout << this->_name << " got " << amount << " hp ! total health is " << this->_health << " hp ! " << this->_energy << " Energy point(s) left"<< std::endl;
 	}
 }
 

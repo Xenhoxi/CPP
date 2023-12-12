@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:58:01 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/08 14:15:50 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/11 14:30:11 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 void	ScavTrap::attack(const std::string &target)
 {
 	if (this->_energy <= 0)
-		std::cout << "ClapTrap " << this->_name << " don't have enought energy point to be repaired !" << std::endl;
+		std::cout << this->_name << " don't have enought energy point to be repaired !" << std::endl;
 	else if (this->_health <= 0)
-		std::cout << "ClapTrap " << this->_name << " don't have enought health point to attack !" << std::endl;
+		std::cout << this->_name << " don't have enought health point to attack !" << std::endl;
 	else
 	{
 		_energy--;
-		std::cout << "ClapTrap " << _name << " is now attacking " << target << " , dealing " << _attack << " points of damage ! ";
+		std::cout << _name << " is now attacking " << target << " , dealing " << _attack << " points of damage ! ";
 		std::cout << _energy << " energy point(s) left ! " << std::endl;
 	}
 }

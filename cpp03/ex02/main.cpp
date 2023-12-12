@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:04:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/28 13:12:17 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/11 14:32:28 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,14 @@
 
 int	main(void)
 {
-	// ClapTrap 	a("Pute");
-	// ClapTrap	b("Caca");
-	// ScavTrap	slav("SlavTrap_1");
-	FragTrap	frag("FragTrap_1");
+	// ClapTrap 	a("Bob");
+	// ScavTrap	slav("Scav");
+	FragTrap	frag("Frag");
 
 	// a.attack("Humain");
 	// a.takeDamage(3);
 	// a.takeDamage(3);
-	// a.takeDamage(3);
-	// a.takeDamage(3);
 	// a.beRepaired(10);
-	// b.attack("Voiture");
-	// b.takeDamage(10);
-	// b.beRepaired(10);
 	// a.takeDamage(100);
 	// slav.takeDamage(5);
 	// slav.beRepaired(6);
