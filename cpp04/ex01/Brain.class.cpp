@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.class.hpp                                      :+:      :+:    :+:   */
+/*   Brain.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 13:36:01 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/11 11:08:50 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/12/11 10:50:47 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/12/11 12:22:10 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_CLASS_HPP
-# define CAT_CLASS_HPP
-#include "Animal.class.hpp"
+#include "Brain.class.hpp"
 
-class Cat : public Animal
+Brain::Brain(void)
 {
-public:
-	Cat(void);
-	Cat(const Cat &ref);
-	virtual ~Cat(void);
-	Cat& operator=(const Cat &rhs);
-	void	makeSound(void) const;
-};
+	std::cout << "Brain constructor called" << std::endl;
+	for (int i = 0; i < 100; i++)
+		ideas[i] = "Idea " + std::to_string(i);
+}
 
-#endif
+Brain::~Brain(void)
+{
+	std::cout << "Brain destructor called" << std::endl;
+}

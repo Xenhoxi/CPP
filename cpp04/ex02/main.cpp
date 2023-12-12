@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:04:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/12 10:34:38 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/12 10:42:27 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,6 @@
 
 int	main(void)
 {
-	// const Animal* meta = new Animal();
-	// std::cout << "meta is a " << meta->getType() << std::endl;
-    // meta->makeSound();
-	// delete meta;
-
-	// const Animal* j = new Dog();
-	// j->makeSound();
-	// std::cout << "j is a " << j->getType() << std::endl;
-	// delete j;
-
-	// const Animal* i = new Cat();
-	// i->makeSound();
-	// std::cout << "i is a " << i->getType() << std::endl;
-	// delete i;
-
-	// const Cat* cat = new Cat();
-	// std::cout << "Cat is a " << cat->getType() << std::endl;
-	// cat->makeSound();
-	// delete cat;
-
 	const Animal* farm[4];
 	for (int i = 0; i < 2; i++)
 		farm[i] = new Dog();

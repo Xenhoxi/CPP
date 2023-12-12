@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 15:56:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/15 13:31:02 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/11 13:38:27 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	Replace::replaceOccurence(void)
 {
 	int	index;
 
+	if (this->_s1 == this->_s2)
+		return ;
 	index = this->_line.find(this->_s1);
 	while (index >= 0)
 	{

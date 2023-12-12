@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2023/12/11 11:46:10 by ljerinec         ###   ########.fr        #
+#    Updated: 2023/12/12 10:42:01 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SOURCES =	main.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CPP = worldBurn
+CPP = abstract
 
 all: $(CPP)
 
