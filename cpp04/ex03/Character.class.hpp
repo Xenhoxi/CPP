@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:02:01 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/13 14:22:02 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/13 14:26:24 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ using namespace std;
 
 class Character : public ICharacter
 {
+private:
+    AMateria    *_inventory[4];
 public:
     Character(void);
     Character(const Character &ref);

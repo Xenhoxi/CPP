@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:40:27 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/13 14:21:05 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/13 15:00:22 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class AMateria
 {
 protected:
-	//...
+	string	_type;
 
 public:
 	AMateria(void);
@@ -31,6 +31,16 @@ public:
 
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
+};
+
+class ice : public AMateria
+{
+	virtual	AMateria* clone() const;
+};
+
+class cure : public AMateria
+{
+	virtual	AMateria* clone() const;
 };
 
 #endif
