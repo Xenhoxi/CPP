@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:40:27 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/13 15:00:22 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/13 15:49:07 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ public:
 	AMateria(void);
 	AMateria(std::string const & type);
 	AMateria(const AMateria &ref);
-    AMateria operator=(const AMateria &ref);
+    AMateria &operator=(const AMateria &ref);
     virtual ~AMateria(void);
 	
 	std::string const & getType() const; //Returns the materia type
@@ -33,12 +33,12 @@ public:
 	virtual void use(ICharacter& target);
 };
 
-class ice : public AMateria
+class Ice : public AMateria
 {
 	virtual	AMateria* clone() const;
 };
 
-class cure : public AMateria
+class Cure : public AMateria
 {
 	virtual	AMateria* clone() const;
 };
