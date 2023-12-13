@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:08:20 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/13 10:38:19 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:05:52 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ public:
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 protected:
-	ClapTrap(void);
 	std::string		_name;
 	unsigned int	_health;
 	unsigned int	_energy;

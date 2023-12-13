@@ -6,17 +6,12 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 12:58:01 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/13 15:12:16 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/11 14:30:11 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.class.hpp"
 #include "ClapTrap.class.hpp"
-
-ScavTrap::ScavTrap(void)
-{
-	return ;
-}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
@@ -24,24 +19,6 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	_energy = 100;
 	_health = 50;
 	_attack = 20;
-}
-
-ScavTrap::ScavTrap(const ScavTrap &ref)
-{
-	this->_name = ref._name;
-	this->_attack = ref._attack;
-	this->_health = ref._health;
-	this->_energy = ref._energy;	
-}
-
-ScavTrap &ScavTrap::operator=(const ScavTrap &rhs)
-{
-	std::cout << "ScavTrap Copy assignment operator overload" << std::endl;
-	_name = rhs._name;
-	_health = rhs._health;
-	_energy = rhs._energy;
-	_attack = rhs._attack;
-	return (*this);
 }
 
 void	ScavTrap::attack(const std::string &target)
