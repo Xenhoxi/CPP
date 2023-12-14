@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:08:20 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/11/28 13:05:52 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/14 13:14:16 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class ClapTrap
 {
 public:
+	ClapTrap(void);
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &ref);
 	~ClapTrap(void);

@@ -6,13 +6,18 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/13 16:06:51 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/14 13:29:50 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.class.hpp"
 
 const static int _bit_width = 8;
+
+ClapTrap::ClapTrap(void)
+{
+	return ;
+}
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attack(0)
 {
@@ -42,7 +47,7 @@ void	ClapTrap::attack(const std::string &target)
 {
 	if (this->_energy <= 0)
 		std::cout << this->_name << " don't have enought energy point to be repaired " << std::endl;
-	else if (this->_health <= 0)
+	else if (this->_health == 0)
 		std::cout << this->_name << " don't have enought health point to attack " << std::endl;
 	else
 	{
@@ -65,8 +70,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energy == 0)
 		std::cout << this->_name << "don't have enought energy point to be repaired !" << std::endl;
-	else if (this->_energy == 0)
-		std::cout << this->_name << "is dead" << std::endl;	
+	else if (this->_health <= 0)
+		std::cout << this->_name << " is dead" << std::endl;	
 	else
 	{
 		this->_health += amount;
