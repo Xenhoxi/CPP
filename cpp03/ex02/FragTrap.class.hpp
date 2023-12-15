@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 13:04:47 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/13 10:40:35 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/15 14:22:42 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 class FragTrap : public ClapTrap
 {
 public:
+	FragTrap(void);
 	FragTrap(std::string name);
 	FragTrap(const FragTrap &ref);
 	FragTrap &operator=(const FragTrap &rhs);

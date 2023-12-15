@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 10:50:47 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/11 12:22:10 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/15 11:09:27 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,16 @@
 Brain::Brain(void)
 {
 	std::cout << "Brain constructor called" << std::endl;
-	for (int i = 0; i < 100; i++)
-		ideas[i] = "Idea " + std::to_string(i);
+}
+
+Brain::Brain(const Brain &ref)
+{
+	std::cout << "Brain constructor called" << std::endl;
+}
+
+Brain &Brain::operator=(const Brain &ref)
+{
+	return (*this);
 }
 
 Brain::~Brain(void)

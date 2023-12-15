@@ -6,20 +6,20 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:41:48 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/11 11:53:36 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:38:09 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.class.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void) : Animal()
 {
 	std::cout << "Cat constructor called" << std::endl;
 	_brain = new Brain();
 	_type = "Cat";
 }
 
-Cat::Cat(const Cat &ref)
+Cat::Cat(const Cat &ref) : Animal()
 {
 	std::cout << "Cat Copy constructor called" << std::endl;
 	_brain = new Brain();

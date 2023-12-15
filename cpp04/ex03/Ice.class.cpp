@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.class.hpp                               :+:      :+:    :+:   */
+/*   Ice.class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 12:27:16 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/15 14:22:42 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/12/15 11:23:00 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/12/15 11:26:55 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string"
-#include "iostream"
-#include "AMateria.class.hpp"
+#include "Master.hpp"
 
-class ICharacter
+Ice::Ice(void)
 {
-public:
-	virtual ~ICharacter() {}
-	virtual std::string const & getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
-};
+	return ;
+}
+
+Ice::Ice(const Ice &ref)
+{
+	return ;
+}
+
+Ice &Ice::operator=(const Ice &rhs)
+{
+	return (*this);
+}
+
+Ice::~Ice(void)
+{
+	return ;
+}
