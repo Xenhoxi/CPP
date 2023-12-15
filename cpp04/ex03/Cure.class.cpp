@@ -6,33 +6,33 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:26:43 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/15 11:42:47 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:08:22 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Master.hpp"
 
-Ice::Ice(void)
+Cure::Cure(void)
 {
 	return ;
 }
 
-Ice::Ice(const Ice &ref)
+Cure::Cure(const Cure &ref)
 {
 	return ;
 }
 
-Ice &Ice::operator=(const Ice &rhs)
+Cure &Cure::operator=(const Cure &rhs)
 {
 	return (*this);
 }
 
-void	Ice::use()
+void	Cure::use(ICharacter &target)
 {
-	
+	return ;
 }
 
-Ice::~Ice(void)
+Cure::~Cure(void)
 {
 	return ;
 }

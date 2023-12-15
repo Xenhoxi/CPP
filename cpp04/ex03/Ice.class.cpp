@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:23:00 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/15 11:26:55 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:08:34 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ Ice::Ice(const Ice &ref)
 Ice &Ice::operator=(const Ice &rhs)
 {
 	return (*this);
+}
+
+void	Cure::use(ICharacter &target)
+{
+	return ;
 }
 
 Ice::~Ice(void)
