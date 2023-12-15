@@ -6,13 +6,18 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 14:07:45 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/11 14:28:49 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/13 10:33:47 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.class.hpp"
 
 const static int _bit_width = 8;
+
+ClapTrap::ClapTrap(void)
+{
+	return ;
+}
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attack(0)
 {
