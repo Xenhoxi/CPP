@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Master.hpp                                         :+:      :+:    :+:   */
+/*   Cure.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 14:14:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/15 11:19:06 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/12/15 11:19:15 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/12/15 11:26:38 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string"
-#include "iostream"
-#include "Ice.class.hpp"
-#include "Cure.class.hpp"
-#include "ICharacter.class.hpp"
-#include "Character.class.hpp"
-#include "IMateria.class.hpp"
-#include "AMateria.class.hpp"
+#ifndef CURE_CLASS_HPP
+# define CURE_CLASS_HPP
+
+#include "Master.hpp"
+
+class Cure : public AMateria
+{
+	Cure(void);
+	Cure(const Cure &ref);
+	Cure &operator=(const Cure &ref);
+	~Cure(void);
+	virtual	AMateria* clone() const;
+	virtual void use(ICharacter& target);
+};
+
+#endif

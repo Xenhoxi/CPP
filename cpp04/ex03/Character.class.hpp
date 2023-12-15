@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:02:01 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/13 14:26:24 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/15 11:10:51 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ private:
     AMateria    *_inventory[4];
 public:
     Character(void);
+    Character(std::string name);
     Character(const Character &ref);
     Character operator=(const Character &ref);
     virtual ~Character(void);

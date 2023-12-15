@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Master.hpp                                         :+:      :+:    :+:   */
+/*   Ice.class.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 14:14:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/15 11:19:06 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/12/15 11:23:00 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/12/15 11:26:55 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string"
-#include "iostream"
-#include "Ice.class.hpp"
-#include "Cure.class.hpp"
-#include "ICharacter.class.hpp"
-#include "Character.class.hpp"
-#include "IMateria.class.hpp"
-#include "AMateria.class.hpp"
+#include "Master.hpp"
+
+Ice::Ice(void)
+{
+	return ;
+}
+
+Ice::Ice(const Ice &ref)
+{
+	return ;
+}
+
+Ice &Ice::operator=(const Ice &rhs)
+{
+	return (*this);
+}
+
+Ice::~Ice(void)
+{
+	return ;
+}
