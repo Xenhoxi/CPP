@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:11:17 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/13 14:23:29 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:22:45 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class IMateriaSource
 {
 public:
-    virtual ~IMateriaSource() {}
+    virtual ~IMateriaSource();
     virtual void learnMateria(AMateria*) = 0;
     virtual AMateria* createMateria(std::string const & type) = 0;
 };
