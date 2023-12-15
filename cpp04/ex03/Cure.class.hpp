@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:19:15 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/15 11:26:38 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:11:32 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class Cure : public AMateria
 {
+public:
 	Cure(void);
 	Cure(const Cure &ref);
 	Cure &operator=(const Cure &ref);
