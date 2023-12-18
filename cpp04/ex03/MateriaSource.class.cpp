@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.class.cpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.class.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 11:40:16 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/18 13:45:40 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/12/18 14:00:02 by ljerinec          #+#    #+#             */
+/*   Updated: 2023/12/18 14:51:51 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Master.hpp"
 
-AMateria::AMateria(void)
+MateriaSource::MateriaSource(void)
 {
     return ;
 }
 
-AMateria::AMateria(const AMateria &ref)
+MateriaSource::MateriaSource(const MateriaSource &ref)
 {
     return ;
 }
 
-AMateria &AMateria::operator=(const AMateria &rhs)
+MateriaSource &MateriaSource::operator=(const MateriaSource &rhs)
 {
     return ;
 }
 
-std::string const & AMateria::getType() const
+void    MateriaSource::learnMateria(AMateria *stuff)
 {
-    return (this->_type);
+    return ;
 }
 
-AMateria::~AMateria(void)
+AMateria    *MateriaSource::createMateria(std::string const & type)
+{
+    return ;
+}
+
+MateriaSource::~MateriaSource(void)
 {
     return ;
 }

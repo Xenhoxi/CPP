@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 10:44:51 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/11 11:30:24 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:37:25 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ class Brain
 {
 public:
 	Brain(void);
+	Brain(const Brain &ref);
+	Brain &operator=(const Brain &rhs);
 	~Brain(void);
+private:
 	std::string ideas[100];
 };
 

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:14:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/15 16:09:59 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/18 13:26:24 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,4 @@
 #include "Character.class.hpp"
 #include "IMateria.class.hpp"
 #include "AMateria.class.hpp"
+#include "MateriaSource.class.hpp"
