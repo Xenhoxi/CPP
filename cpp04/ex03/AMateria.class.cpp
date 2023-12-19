@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:40:16 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/18 13:45:40 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 00:37:57 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ AMateria::AMateria(void)
 
 AMateria::AMateria(const AMateria &ref)
 {
+    this->_type = ref._type;
     return ;
 }
 
 AMateria &AMateria::operator=(const AMateria &rhs)
 {
+    this->_type = rhs._type;
     return ;
 }
 
