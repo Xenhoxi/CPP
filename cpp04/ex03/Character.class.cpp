@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:55:44 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 14:26:34 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:11:05 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,11 @@ void	Character::equip(AMateria *m)
 
 void	Character::unequip(int idx)
 {
-	if (!_inventory[idx])
+	if (_inventory[idx])
+	{
+		std::cout << "Item of type " << _inventory[idx]->getType() << " unequiped !" << std::endl;
 		_inventory[idx] = 0;
+	}
 	else
 		std::cout << "No item in this slot !" << std::endl;
 }
@@ -81,5 +84,10 @@ std::string const &Character::getName(void) const
 
 Character::~Character(void)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (_inventory[i])
+			delete _inventory[i];
+	}
     return ;
 }
