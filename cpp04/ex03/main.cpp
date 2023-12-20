@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:20:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/18 13:26:31 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:29:04 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int main()
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
+	tmp = src->createMateria("fire");
+	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	
@@ -30,6 +32,9 @@ int main()
 	
 	me->use(0, *bob);
 	me->use(1, *bob);
+	me->unequip(1);
+	me->use(1, *bob);
+	me->use(2, *bob);
 	
 	delete bob;
 	delete me;

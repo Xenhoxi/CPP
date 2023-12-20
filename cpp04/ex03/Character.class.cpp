@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:55:44 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 13:44:11 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:26:34 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ Character::Character(void)
 
 Character::Character(std::string name)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		_inventory[i] = 0;
+	}
 	_name = name;
 }
 
@@ -60,6 +64,19 @@ void	Character::unequip(int idx)
 		_inventory[idx] = 0;
 	else
 		std::cout << "No item in this slot !" << std::endl;
+}
+
+void	Character::use(int idx, ICharacter &target)
+{
+	if (_inventory[idx])
+		_inventory[idx]->use(target);
+	else
+		std::cout << "No item in this slot !" << std::endl;
+}
+
+std::string const &Character::getName(void) const
+{
+	return (_name);
 }
 
 Character::~Character(void)

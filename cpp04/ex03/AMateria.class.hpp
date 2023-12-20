@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:40:27 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 13:50:40 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:56:26 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ protected:
 	std::string	_type;
 public:
 	AMateria(void);
+	AMateria(std::string const & type);
+	AMateria(const AMateria &ref);
 	AMateria &operator=(const AMateria &rhs);
 	virtual ~AMateria(void);
 

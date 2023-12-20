@@ -6,19 +6,19 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:26:43 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 12:30:14 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:23:23 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Master.hpp"
 
-Cure::Cure(void)
+Cure::Cure(void) : AMateria()
 {
 	this->_type = "cure";
 	return ;
 }
 
-Cure::Cure(const Cure &ref)
+Cure::Cure(const Cure &ref) : AMateria()
 {
 	*this = ref;
 	return ;
@@ -31,7 +31,7 @@ Cure &Cure::operator=(const Cure &rhs)
 	return (*this);
 }
 
-AMateria *AMateria::clone(void) const
+AMateria *Cure::clone(void) const
 {
 	AMateria *tmp = new Cure();	
 	return (tmp);
