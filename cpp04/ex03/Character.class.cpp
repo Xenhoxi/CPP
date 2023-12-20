@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:55:44 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 12:45:46 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:44:11 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ Character &Character::operator=(const Character &rhs)
     return (*this);
 }
 
-void	Character::equip(AMateria *matos)
+void	Character::equip(AMateria *m)
 {
 	for (int i = 0; i < 4; i++)
 	{
 		if (!_inventory[i])
 		{
-			_inventory[i] = matos;
+			_inventory[i] = m;
 			return ;
 		}
 	}

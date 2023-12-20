@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:40:16 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 12:26:29 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 13:46:50 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 AMateria::AMateria(void)
 {
-    return ;
-}
-
-AMateria::AMateria(const AMateria &ref)
-{
-    *this = ref;
     return ;
 }
 
