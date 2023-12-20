@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:55:44 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 14:26:34 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:41:54 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ void	Character::equip(AMateria *m)
 void	Character::unequip(int idx)
 {
 	if (!_inventory[idx])
+	{
+		_inventory[idx]->save();
 		_inventory[idx] = 0;
+	}
 	else
 		std::cout << "No item in this slot !" << std::endl;
 }

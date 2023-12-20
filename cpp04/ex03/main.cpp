@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:20:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 14:49:21 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:48:42 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
-	system("leaks interface");
 }
 
