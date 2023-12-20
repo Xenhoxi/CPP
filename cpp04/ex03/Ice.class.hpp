@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:17:46 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/15 16:11:24 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:17:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ public:
 	Ice &operator=(const Ice &ref);
 	~Ice(void);
 	virtual	AMateria* clone() const;
-	virtual void use(ICharacter& target);
 };
 
 #endif

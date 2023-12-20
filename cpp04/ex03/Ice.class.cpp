@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:23:00 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/18 13:57:17 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:30:02 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,21 @@ Ice::Ice(void)
 
 Ice::Ice(const Ice &ref)
 {
-	this->_type = ref.getType();
+	this->_type = ref._type;
 	return ;
 }
 
 Ice &Ice::operator=(const Ice &rhs)
 {
-	this->_type = rhs.getType();
+	if (this != &rhs)
+		this->_type = rhs._type;
 	return (*this);
 }
 
-void	Cure::use(ICharacter &target)
+AMateria *AMateria::clone(void) const
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *";
-	return ;
+	AMateria *tmp = new Ice();	
+	return (tmp);
 }
 
 Ice::~Ice(void)
