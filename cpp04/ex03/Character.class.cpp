@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:55:44 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 14:26:34 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:58:10 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,10 @@ std::string const &Character::getName(void) const
 
 Character::~Character(void)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (_inventory[i])
+			delete _inventory[i];
+	}
     return ;
 }
