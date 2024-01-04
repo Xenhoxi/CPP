@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:23:00 by ljerinec          #+#    #+#             */
-/*   Updated: 2023/12/20 14:23:26 by ljerinec         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:36:09 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Ice &Ice::operator=(const Ice &rhs)
 
 AMateria *Ice::clone(void) const
 {
-	AMateria *tmp = new Ice();	
+	AMateria *tmp = new Ice();
 	return (tmp);
 }
 
