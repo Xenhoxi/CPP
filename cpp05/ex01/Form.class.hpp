@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:47:21 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 12:32:17 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/05 13:32:34 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iostream>
 #include "Bureaucrat.class.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 public:
@@ -26,7 +28,7 @@ public:
 	public:
 		GradeTooHighException(const char *msg) : _message(msg) {}
 		virtual const char* what() const throw() {
-			return (_message); 
+			return (_message);
 		}
 	};
 	class GradeTooLowException : public std::exception 

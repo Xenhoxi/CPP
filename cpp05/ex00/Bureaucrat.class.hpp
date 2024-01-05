@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 00:27:13 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/05 13:43:56 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ public:
 		}
 	};
 	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const Bureaucrat &src);
+	Bureaucrat &operator=(const Bureaucrat &rhs);
 	~Bureaucrat(void);
 	int			getGrade(void) const;
 	std::string	getName(void) const;

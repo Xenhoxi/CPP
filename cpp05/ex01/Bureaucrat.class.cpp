@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:33 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 12:37:38 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/05 13:56:23 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 Bureaucrat::Bureaucrat(void)
 {
 	return ;
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src.getName())
+{
+	*this = src;
+    return ;
+}
+
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
+{
+	if (this != &rhs)
+		this->_grade = rhs._grade;
+	return (*this);
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)
@@ -34,9 +47,15 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)
 	}
 }
 
-void	Bureaucrat::signForm(void) const
+void	Bureaucrat::signForm(Form &form)
 {
-	
+	if (form.getIsSigned())
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " Because it already got signed" << std::endl;
+	else if (_grade > form.getSignGrade())
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " Because required grade to high" << std::endl;
+	else
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+
 }
 
 void	Bureaucrat::promote(void)

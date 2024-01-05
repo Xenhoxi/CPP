@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:54:49 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 12:35:19 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/05 13:55:54 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 Form::Form(std::string name, const int sign_grade, const int exec_grade) : _name(name), _isSigned(0), _signGrade(Check(sign_grade)), _execGrade(Check(exec_grade))
 {
 	return ;
+}
+
+Form::Form(const Form &src) : _name(src.getName()), _signGrade(Check(src.getSignGrade())), _execGrade(Check(src.getExecGrade()))
+{
+	*this = src;
+    return ;
+}
+
+Form &Form::operator=(const Form &rhs)
+{
+	if (this != &rhs)
+		this->_isSigned = rhs._isSigned;
+	return (*this);
 }
 
 int Form::Check(int grade)
@@ -60,11 +73,6 @@ Form::Form(void) : _signGrade(0), _execGrade(0)
 	return ;
 }
 
-Form::~Form(void)
-{
-	return ;
-}
-
 std::string	Form::getName(void) const
 {
 	return (_name);
@@ -83,6 +91,11 @@ int	Form::getSignGrade(void) const
 int	Form::getExecGrade(void) const
 {
 	return (_execGrade);
+}
+
+Form::~Form(void)
+{
+	return ;
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &rhs)

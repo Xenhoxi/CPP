@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:33 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 00:27:03 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/05 13:56:45 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,19 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &src) : _name(src.getName())
+{
+	*this = src;
+    return ;
+}
+
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs)
+{
+	if (this != &rhs)
+		this->_grade = rhs._grade;
+	return (*this);
 }
 
 void	Bureaucrat::promote(void)
