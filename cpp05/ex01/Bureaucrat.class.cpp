@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:33 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 00:27:03 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/04 15:47:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)
 
 void	Bureaucrat::promote(void)
 {
-	try 
+	try
 	{
-		if (this->_grade <= 1)
+		if (_grade - 1 < 1)
 			throw Bureaucrat::GradeTooHighException();
 		else
-			this->_grade--;
+			_grade -= 1;
 	}
 	catch(const Bureaucrat::GradeTooHighException &e)
 	{
@@ -51,12 +51,12 @@ void	Bureaucrat::promote(void)
 
 void	Bureaucrat::demote(void)
 {
-	try 
+	try
 	{
 		if (_grade + 1 > 150)
 			throw Bureaucrat::GradeTooLowException();
 		else
-			this->_grade++;
+			_grade += 1;
 	}
 	catch(const Bureaucrat::GradeTooLowException &e)
 	{

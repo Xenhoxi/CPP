@@ -5,42 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 11:20:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/04 12:11:36 by ljerinec         ###   ########.fr       */
+/*   Created: 2023/12/23 15:42:22 by ljerinec          #+#    #+#             */
+/*   Updated: 2024/01/05 00:38:47 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Master.hpp"
+#include "Bureaucrat.class.hpp"
+#include "Form.class.hpp"
 
-int main()
+int main(void)
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	
-	ICharacter* me = new Character("me");
-	
-	AMateria* tmp;
-	tmp = 0;
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	
-	ICharacter* bob = new Character("bob");
-	me->equip(tmp->clone());
+	Bureaucrat bureau_1("michel", 150);
+	Bureaucrat bureau_2("Karen", 1);
+	Form contract("Contract_1", -1, -1);
 
-	me->use(0, *bob);
-	me->use(2, *bob);
-	me->unequip(0);
-	me->unequip(1);
-	me->unequip(2);
-	me->use(1, *bob);
-	me->use(2, *bob);
-	
-	delete bob;
-	delete me;
-	delete src;
+	std::cout << bureau_1 << std::endl;
+	std::cout << bureau_2 << std::endl;
+	std::cout << contract << std::endl;
+	return (0);
 }
-
