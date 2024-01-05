@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:54:49 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 00:37:57 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/05 12:35:19 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,37 @@ int Form::Check(int grade)
 	try
 	{
 		if (grade > 150)
-			throw Form::GradeTooLowException();
+			throw Form::GradeTooLowException("Grade to Low at creation of the form !");
 		else if (grade < 1)
-			throw Form::GradeTooLowException();
+			throw Form::GradeTooHighException("Grade to High at creation of the form !");
 		else
 			return (grade);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 		return (150);
 	}
-	// return (grade);
+}
+
+void	Form::beSigned(Bureaucrat &someone)
+{
+	try
+	{
+		if (someone.getGrade() > _signGrade)
+			throw Form::GradeTooLowException("Grade of the bureaucrat is to low to sign this form");
+		else if (_isSigned == 0)
+		{
+			_isSigned = 1;
+			std::cout << "Form signed !" << std::endl;
+		}
+		else
+			std::cout << "Form already signed !" << std::endl;
+	}
+	catch (const Form::GradeTooLowException &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 }
 
 Form::Form(void) : _signGrade(0), _execGrade(0)

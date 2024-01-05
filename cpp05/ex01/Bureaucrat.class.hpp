@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/04 14:59:37 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/05 12:50:50 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ public:
 	std::string	getName(void) const;
 	void		promote(void);
 	void		demote(void);
+	// void		signForm(void) const;
 private:
 	Bureaucrat(void);
 	const std::string	_name;

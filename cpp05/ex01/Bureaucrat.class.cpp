@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:33 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/04 15:47:30 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/05 12:37:38 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+}
+
+void	Bureaucrat::signForm(void) const
+{
+	
 }
 
 void	Bureaucrat::promote(void)
