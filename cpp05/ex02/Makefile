@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2024/01/05 14:26:29 by ljerinec         ###   ########.fr        #
+#    Updated: 2024/01/08 12:16:55 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,9 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 SOURCES =	main.cpp \
 			Bureaucrat.class.cpp \
 			AForm.class.cpp \
+			PresidentialPardonForm.cpp \
+			RobotomyRequestForm.cpp \
+			ShrubberyCreationForm.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
