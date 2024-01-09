@@ -49,7 +49,8 @@ public:
 	int				getSignGrade(void) const;
 	int				getExecGrade(void) const;
 	void			beSigned(Bureaucrat &someone);
-	virtual void	execute(Bureaucrat const &executor) = 0;
+	void			execute(Bureaucrat const &executor) const;
+	virtual	void	executeForm() = 0;
 private:
 	AForm();
 	int		Check(int grade);

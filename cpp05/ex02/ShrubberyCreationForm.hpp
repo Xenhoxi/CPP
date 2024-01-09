@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:27:36 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/08 14:24:55 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:17:43 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 #include "AForm.class.hpp" 
 
-class ShrubberyCreationForm : AForm
+class ShrubberyCreationForm : public AForm
 {
 public:
 	ShrubberyCreationForm(std::string name);
 	ShrubberyCreationForm(const ShrubberyCreationForm &src);
 	ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &src);
 	~ShrubberyCreationForm();
-	virtual void	execute(Bureaucrat const &executor) const;
+	virtual void	executeForm();
 private:
 	ShrubberyCreationForm();
 };

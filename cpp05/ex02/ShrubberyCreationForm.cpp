@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:27:31 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/08 14:25:37 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:09:26 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) :
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
 {
+	(void) rhs;
 	return (*this);
 }
 
@@ -33,8 +34,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : AForm(name, 145
 	return ;
 }
 
-void	execute(Bureaucrat const & executor)
+void	ShrubberyCreationForm::executeForm()
 {
+	std::cout << "caca" << std::endl;
 	// Create a file named : <target>_shrubbery 
 	// target is the name in the class AForm.
 	// Fill this file with ASCII trees

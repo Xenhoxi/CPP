@@ -41,7 +41,7 @@ int AForm::Check(int grade)
 		else
 			return (grade);
 	}
-	catch(const std::exception& e)
+	catch(const std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 		return (150);
@@ -57,12 +57,29 @@ void	AForm::beSigned(Bureaucrat &someone)
 		else if (_isSigned == 0)
 		{
 			_isSigned = 1;
-			std::cout << "AForm signed !" << std::endl;
+			std::cout << "Form signed !" << std::endl;
 		}
 		else
-			std::cout << "AForm already signed !" << std::endl;
+			std::cout << "Form already signed !" << std::endl;
 	}
 	catch (const AForm::GradeTooLowException &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+void	AForm::execute(Bureaucrat const &executor) const
+{
+	try
+	{
+		if (!this->getIsSigned())
+			throw AForm::GradeTooHighException("Form is not signed");
+		else if (executor.getGrade() <= this->getExecGrade())
+			throw AForm::GradeTooLowException("Grade's executor is to low");
+		else
+			void executeForm();
+	}
+	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
 	}

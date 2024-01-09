@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:31:04 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/08 14:24:36 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:17:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 #include "AForm.class.hpp"
 
-class PresidentialPardonForm : AForm
+class PresidentialPardonForm : public AForm
 {
 public:
 	PresidentialPardonForm(std::string name);
 	PresidentialPardonForm(const PresidentialPardonForm &src);
 	PresidentialPardonForm	&operator=(const PresidentialPardonForm &src);
 	~PresidentialPardonForm();
-	virtual void	execute(Bureaucrat const &executor) const;
+	virtual void	executeForm();
 private:
 	PresidentialPardonForm();
 };

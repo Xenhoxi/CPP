@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 13:38:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/08 14:25:35 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:09:02 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &src) : AForm
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
 {
+	(void) rhs;
 	return (*this);
 }
 
@@ -33,8 +34,9 @@ RobotomyRequestForm::RobotomyRequestForm(std::string name) : AForm(name, 72, 45)
 	return ;
 }
 
-void	execute(Bureaucrat const & executor)
+void	RobotomyRequestForm::executeForm()
 {
+	std::cout << "drill your brain" << std::endl;
 	// Write some drilling noise in cout 
 	// 50% chance of succes message otherwise robotomy failed.
 }
