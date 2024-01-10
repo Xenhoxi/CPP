@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:27:31 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/09 14:55:54 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:32:56 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,20 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : AForm(name, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrebbery Creation Form", 145, 137)
 {
+	_target = target;
 	return ;
+}
+
+std::string	ShrubberyCreationForm::getTarget(void) const
+{
+	return (_target);
 }
 
 void	ShrubberyCreationForm::executeForm() const
 {
-	std::ofstream	ofs((this->getName() += "_Shrebbery").c_str());
+	std::ofstream	ofs((this->getTarget() += "_Shrebbery").c_str());
 
 	ofs << "                                    .         ;" << std::endl
 	<< "       .              .              ;%     ;;" << std::endl
@@ -66,6 +72,7 @@ void	ShrubberyCreationForm::executeForm() const
 	<< "                    ;%@@@@%%:;;;." << std::endl
 	<< "                ...;%@@@@@%%:;;;;,.." << std::endl;
 	ofs.close();
+	std::cout << "Shrubbery Creation Form execute on " << getTarget() << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

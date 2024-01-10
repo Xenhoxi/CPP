@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2024/01/08 12:16:55 by ljerinec         ###   ########.fr        #
+#    Updated: 2024/01/10 11:33:38 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SOURCES =	main.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CPP = Form
+CPP = ExecuteForm
 
 all: $(CPP)
 
@@ -34,6 +34,7 @@ $(CPP): $(OBJECTS)
 
 clean:
 	@rm -f $(OBJECTS)
+	@rm -f *_Shrebbery
 
 fclean: clean
 	@rm -f $(CPP)

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:31:04 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/09 14:10:43 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:16:26 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@
 class PresidentialPardonForm : public AForm
 {
 public:
-	PresidentialPardonForm(std::string name);
+	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(const PresidentialPardonForm &src);
 	PresidentialPardonForm	&operator=(const PresidentialPardonForm &src);
 	~PresidentialPardonForm();
 	virtual void	executeForm() const;
+	std::string		getTarget(void) const;
 private:
 	PresidentialPardonForm();
+	std::string	_target;
 };
 
 #endif

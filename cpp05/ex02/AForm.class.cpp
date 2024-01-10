@@ -57,10 +57,10 @@ void	AForm::beSigned(Bureaucrat &someone)
 		else if (_isSigned == 0)
 		{
 			_isSigned = 1;
-			std::cout << "Form signed !" << std::endl;
+			std::cout << someone.getName() << " signed " << this->getName() << std::endl;
 		}
 		else
-			std::cout << "Form already signed !" << std::endl;
+			std::cout << someone.getName() << " couldn't sign " << this->getName() << " because it already got signed" << std::endl;
 	}
 	catch (const AForm::GradeTooLowException &e)
 	{

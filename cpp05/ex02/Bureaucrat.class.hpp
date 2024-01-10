@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 14:26:00 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:20:38 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ public:
 	void		promote(void);
 	void		demote(void);
 	void		signForm(AForm &form);
+	void		executeForm(AForm const &form);
 private:
 	Bureaucrat(void);
 	const std::string	_name;

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 13:38:02 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/09 14:23:10 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:16:53 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,27 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 	return (*this);
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string name) : AForm(name, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Rebotomy Request Form", 72, 45)
 {
+	_target = target;
 	return ;
+}
+
+std::string	RobotomyRequestForm::getTarget(void) const
+{
+	return (_target);
 }
 
 void	RobotomyRequestForm::executeForm() const
 {
 	int	random_value;
 
-	std::srand(std::time(0));
+	std::srand(0);
 	std::cout << "VRRRRRRRR! BRRRRRRR! ZZZZZZZZZ! WHIRRRRRR! ";
 	random_value = std::rand();
 	random_value = random_value % 2;
 	if (random_value == 1)
-		std::cout << "Robotomy succesfully done !" << std::endl;
+		std::cout << "Robotomy succesfully done on " << getTarget() << std::endl;
 	else
 		std::cout << "Robotomy failed ..." << std::endl;
 }
