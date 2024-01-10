@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:31:04 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/09 13:17:30 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/09 14:10:43 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	PresidentialPardonForm(const PresidentialPardonForm &src);
 	PresidentialPardonForm	&operator=(const PresidentialPardonForm &src);
 	~PresidentialPardonForm();
-	virtual void	executeForm();
+	virtual void	executeForm() const;
 private:
 	PresidentialPardonForm();
 };

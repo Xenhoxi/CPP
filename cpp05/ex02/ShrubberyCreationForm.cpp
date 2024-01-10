@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:27:31 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/09 13:09:26 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/09 14:55:54 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,39 +34,38 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : AForm(name, 145
 	return ;
 }
 
-void	ShrubberyCreationForm::executeForm()
+void	ShrubberyCreationForm::executeForm() const
 {
-	std::cout << "caca" << std::endl;
-	// Create a file named : <target>_shrubbery 
-	// target is the name in the class AForm.
-	// Fill this file with ASCII trees
-	//                                    .         ;
-	//       .              .              ;%     ;;
-	//         ,           ,                :;%  %;
-	//          :         ;                   :;%;'     .,
-	// ,.        %;     %;            ;        %;'    ,;
-	//   ;       ;%;  %%;        ,     %;    ;%;    ,%'
-	//    %;       %;%;      ,  ;       %;  ;%;   ,%;'
-	//     ;%;      %;        ;%;        % ;%;  ,%;'
-	//      `%;.     ;%;     %;'         `;%%;.%;'
-	//       `:;%.    ;%%. %@;        %; ;@%;%'
-	//          `:%;.  :;bd%;          %;@%;'
-	//            `@%:.  :;%.         ;@@%;'
-	//              `@%.  `;@%.      ;@@%;
-	//                `@%%. `@%%    ;@@%;
-	//                  ;@%. :@%%  %@@%;
-	//                    %@bd%%%bd%%:;
-	//                      #@%%%%%:;;
-	//                      %@@%%%::;
-	//                      %@@@%(o);  . '
-	//                      %@@@o%;:(.,'
-	//                  `.. %@@@o%::;
-	//                     `)@@@o%::;
-	//                      %@@(o)::;
-	//                     .%@@@@%::;
-	//                     ;%@@@@%::;.
-	//                    ;%@@@@%%:;;;.
-	//                ...;%@@@@@%%:;;;;,..
+	std::ofstream	ofs((this->getName() += "_Shrebbery").c_str());
+
+	ofs << "                                    .         ;" << std::endl
+	<< "       .              .              ;%     ;;" << std::endl
+	<< "         ,           ,                :;%  %;" << std::endl
+	<< "          :         ;                   :;%;'     .," << std::endl
+	<< " ,.        %;     %;            ;        %;'    ,;" << std::endl
+	<< "   ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl
+	<< "    %;       %;%;      ,  ;       %;  ;%;   ,%;'" << std::endl
+	<< "     ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl
+	<< "      `%;.     ;%;     %;'         `;%%;.%;'" << std::endl
+	<< "       `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl
+	<< "          `:%;.  :;bd%;          %;@%;'" << std::endl
+	<< "            `@%:.  :;%.         ;@@%;'" << std::endl
+	<< "              `@%.  `;@%.      ;@@%;" << std::endl
+	<< "                `@%%. `@%%    ;@@%;" << std::endl 
+	<< "                  ;@%. :@%%  %@@%;" << std::endl
+	<< "                    %@bd%%%bd%%:;" << std::endl
+	<< "                      #@%%%%%:;;" << std::endl
+	<< "                      %@@%%%::;" << std::endl
+	<< "                      %@@@%(o);  . '" << std::endl
+	<< "                      %@@@o%;:(.,'" << std::endl
+	<< "                  `.. %@@@o%::;" << std::endl
+	<< "                     `)@@@o%::;" << std::endl
+	<< "                      %@@(o)::;" << std::endl
+	<< "                     .%@@@@%::;" << std::endl
+	<< "                     ;%@@@@%::;." << std::endl
+	<< "                    ;%@@@@%%:;;;." << std::endl
+	<< "                ...;%@@@@@%%:;;;;,.." << std::endl;
+	ofs.close();
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

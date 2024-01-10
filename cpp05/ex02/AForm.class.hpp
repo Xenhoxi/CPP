@@ -50,7 +50,7 @@ public:
 	int				getExecGrade(void) const;
 	void			beSigned(Bureaucrat &someone);
 	void			execute(Bureaucrat const &executor) const;
-	virtual	void	executeForm() = 0;
+	virtual	void	executeForm() const = 0;
 private:
 	AForm();
 	int		Check(int grade);

@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:33 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/09 13:20:16 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/09 14:27:03 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,10 @@ void	Bureaucrat::signForm(AForm &form)
 	else if (_grade > form.getSignGrade())
 		std::cout << this->getName() << " couldn't sign because required grade to high" << std::endl;
 	else
+	{
+		form.beSigned(*this);
 		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
 
 }
 

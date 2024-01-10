@@ -74,10 +74,10 @@ void	AForm::execute(Bureaucrat const &executor) const
 	{
 		if (!this->getIsSigned())
 			throw AForm::GradeTooHighException("Form is not signed");
-		else if (executor.getGrade() <= this->getExecGrade())
+		else if (executor.getGrade() > this->getExecGrade())
 			throw AForm::GradeTooLowException("Grade's executor is to low");
 		else
-			void executeForm();
+			executeForm();
 	}
 	catch (std::exception &e)
 	{
