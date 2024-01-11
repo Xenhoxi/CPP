@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 14:27:31 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/10 11:32:56 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/11 13:34:06 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 
 void	ShrubberyCreationForm::executeForm() const
 {
-	std::ofstream	ofs((this->getTarget() += "_Shrebbery").c_str());
+	std::ofstream	ofs((this->getTarget() += "_Shrubbery").c_str());
 
 	ofs << "                                    .         ;" << std::endl
 	<< "       .              .              ;%     ;;" << std::endl

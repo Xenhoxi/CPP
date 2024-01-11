@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2024/01/10 11:35:32 by ljerinec         ###   ########.fr        #
+#    Updated: 2024/01/11 13:34:12 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ $(CPP): $(OBJECTS)
 
 clean:
 	@rm -f $(OBJECTS)
-	@rm -f *_Shrebbery
+	@rm -f *_Shrubbery
 
 fclean: clean
 	@rm -f $(CPP)

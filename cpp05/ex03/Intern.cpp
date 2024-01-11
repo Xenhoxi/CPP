@@ -6,15 +6,18 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:00:26 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/10 14:08:07 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:45:25 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 Intern::Intern(void)
 {
-	return ;
+	std::cout << "Intern Created !" << std::endl;
 }
 
 Intern::Intern(const Intern &src)
@@ -30,9 +33,41 @@ Intern &Intern::operator=(const Intern &rhs)
 	return (*this);
 }
 
-AForm &Intern::makeForm(std::string type, std::string target)
+AForm *Intern::makeShrubberyCreation(std::string target)
 {
-	// comme l'ex04 de cpp01 et creer 3 methodes membres.
+	return (new ShrubberyCreationForm(target));
+}
+
+AForm *Intern::makeRobotomyRequest(std::string target)
+{
+	return (new RobotomyRequestForm(target));
+}
+
+AForm *Intern::makePresidentialPardon(std::string target)
+{
+	return (new PresidentialPardonForm(target));
+}
+
+AForm *Intern::makeForm(std::string type, std::string target)
+{
+	Intern	intern;
+
+	AForm *(Intern::*arrayPtr[3])(std::string target) = {&Intern::makeShrubberyCreation, &Intern::makeRobotomyRequest, &Intern::makePresidentialPardon};
+	std::string	arrayStr[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+	try
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			if (type == arrayStr[i])
+				return (intern.*arrayPtr[i])(target);
+		}
+		throw Intern::InexistantForm();
+	}
+	catch (Intern::InexistantForm &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	return (NULL);
 }
 
 Intern::~Intern()
