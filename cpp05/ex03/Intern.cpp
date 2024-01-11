@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:00:26 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/11 11:45:25 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:21:43 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ AForm *Intern::makeForm(std::string type, std::string target)
 	catch (Intern::InexistantForm &e)
 	{
 		std::cerr << e.what() << std::endl;
+		return (NULL);
 	}
 	return (NULL);
 }
