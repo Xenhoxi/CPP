@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:47:21 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 13:32:34 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/17 12:48:40 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ public:
 		const char *_message;
 	public:
 		GradeTooLowException(const char *msg) : _message(msg) {}
+		virtual const char* what() const throw() {
+			return (_message); 
+		}
+	};
+	class FormAlreadySign : public std::exception 
+	{
+		const char *_message;
+	public:
+		FormAlreadySign(const char *msg) : _message(msg) {}
 		virtual const char* what() const throw() {
 			return (_message); 
 		}

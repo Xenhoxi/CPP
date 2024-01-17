@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:41:41 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/12 12:07:03 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:27:39 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
+#include <limits.h>
 
 class ScalarConverter
 {
