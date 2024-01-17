@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 14:54:49 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 13:55:54 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:08:37 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,18 @@ void	Form::beSigned(Bureaucrat &someone)
 		else if (_isSigned == 0)
 		{
 			_isSigned = 1;
-			std::cout << "Form signed !" << std::endl;
+			std::cout << someone.getName() << " Signed " << this->getName() << std::endl;
 		}
 		else
-			std::cout << "Form already signed !" << std::endl;
+			throw Form::FormAlreadySign(" attempt to sign a form already signed : ");
 	}
 	catch (const Form::GradeTooLowException &e)
 	{
 		std::cerr << e.what() << std::endl;
+	}
+	catch (const Form::FormAlreadySign &e)
+	{
+		std::cerr << someone.getName() << e.what() << this->getName() << std::endl;
 	}
 }
 

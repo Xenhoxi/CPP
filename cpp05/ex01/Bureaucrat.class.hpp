@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:53 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 13:51:02 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/17 13:54:26 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ public:
 	public:
 		virtual const char* what() const throw() {
 			return ("Grade too Low !"); 
+		}
+	};
+	class FormAlreadySign : public std::exception 
+	{
+	public:
+		virtual const char* what() const throw() {
+			return ("Form already get signed !"); 
 		}
 	};
 	Bureaucrat(std::string name, int grade);

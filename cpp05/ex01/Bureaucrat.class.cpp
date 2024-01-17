@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:45:33 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/05 13:56:23 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:25:00 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(150)
 
 void	Bureaucrat::signForm(Form &form)
 {
-	if (form.getIsSigned())
-		std::cout << this->getName() << " couldn't sign " << form.getName() << " Because it already got signed" << std::endl;
-	else if (_grade > form.getSignGrade())
-		std::cout << this->getName() << " couldn't sign " << form.getName() << " Because required grade to high" << std::endl;
-	else
-		std::cout << this->getName() << " signed " << form.getName() << std::endl;
-
+	form.beSigned(*this);
 }
 
 void	Bureaucrat::promote(void)

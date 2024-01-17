@@ -53,18 +53,22 @@ void	AForm::beSigned(Bureaucrat &someone)
 	try
 	{
 		if (someone.getGrade() > _signGrade)
-			throw AForm::GradeTooLowException("Grade of the bureaucrat is to low to sign this Aform");
+			throw AForm::GradeTooLowException("Grade of the bureaucrat is to low to sign : ");
 		else if (_isSigned == 0)
 		{
 			_isSigned = 1;
-			std::cout << someone.getName() << " signed " << this->getName() << std::endl;
+			std::cout << someone.getName() << " Signed " << this->getName() << std::endl;
 		}
 		else
-			std::cout << someone.getName() << " couldn't sign " << this->getName() << " because it already got signed" << std::endl;
+			throw AForm::FormAlreadySign(" attempt to sign a form already signed : ");
 	}
 	catch (const AForm::GradeTooLowException &e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << e.what() << this->getName() << std::endl;
+	}
+	catch (const AForm::FormAlreadySign &e)
+	{
+		std::cerr << someone.getName() << e.what() << this->getName() << std::endl;
 	}
 }
 

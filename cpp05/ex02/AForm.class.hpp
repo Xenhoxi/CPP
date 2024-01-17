@@ -40,6 +40,15 @@ public:
 			return (_message); 
 		}
 	};
+	class FormAlreadySign : public std::exception 
+	{
+		const char *_message;
+	public:
+		FormAlreadySign(const char *msg) : _message(msg) {}
+		virtual const char* what() const throw() {
+			return (_message); 
+		}
+	};
 	AForm(std::string name, const int _sign_grade, const int _exec_grade);
 	AForm(const AForm &src);
 	AForm &operator=(const AForm &src);
