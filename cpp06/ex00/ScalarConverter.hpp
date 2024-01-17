@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 15:42:22 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/12 12:07:12 by ljerinec         ###   ########.fr       */
+/*   Created: 2024/01/12 11:41:41 by ljerinec          #+#    #+#             */
+/*   Updated: 2024/01/12 12:07:03 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
 
-int main(int argc, char **argv)
+#include <iostream>
+
+class ScalarConverter
 {
-	if (argc != 2)
-		return (1);
-	ScalarConverter::convert(argv[1]);
-	return (0);
-}
+public:
+	~ScalarConverter();
+	static	void	convert(char *str);
+private:
+	ScalarConverter();
+	ScalarConverter(const ScalarConverter &src);
+	ScalarConverter &operator=(const ScalarConverter &src);
+};
+
+#endif

@@ -6,7 +6,7 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2024/01/11 13:35:39 by ljerinec         ###   ########.fr        #
+#    Updated: 2024/01/12 12:08:02 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,11 @@ CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SOURCES =	main.cpp \
+			ScalarConverter.cpp \
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-CPP = bureaucrat
+CPP = static_cast
 
 all: $(CPP)
 
