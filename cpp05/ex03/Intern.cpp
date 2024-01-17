@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:00:26 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/11 14:21:43 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:11:21 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,14 @@ AForm *Intern::makePresidentialPardon(std::string target)
 
 AForm *Intern::makeForm(std::string type, std::string target)
 {
-	Intern	intern;
-
 	AForm *(Intern::*arrayPtr[3])(std::string target) = {&Intern::makeShrubberyCreation, &Intern::makeRobotomyRequest, &Intern::makePresidentialPardon};
 	std::string	arrayStr[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
-	try
+	for (int i = 0; i < 3; i++)
 	{
-		for (int i = 0; i < 3; i++)
-		{
-			if (type == arrayStr[i])
-				return (intern.*arrayPtr[i])(target);
-		}
-		throw Intern::InexistantForm();
+		if (type == arrayStr[i])
+			return (this->*arrayPtr[i])(target);
 	}
-	catch (Intern::InexistantForm &e)
-	{
-		std::cerr << e.what() << std::endl;
-		return (NULL);
-	}
-	return (NULL);
+	throw Intern::InexistantForm();
 }
 
 Intern::~Intern()

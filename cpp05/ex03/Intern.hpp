@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:00:31 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/11 11:32:43 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:51:29 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ public:
 	{
 	public:
 		virtual const char* what() const throw() {
-			return ("Intern try to create a inexistante type of Form, he got killed by bureaucrat : Error are unacceptable !"); 
+			return ("Intern try to create a inexistante type of Form !"); 
 		}
 	};
     Intern(void);
