@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:41:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/18 14:18:10 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:07:49 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	fromDouble(char *str)
 	double	value = std::atof(str);
 	if (value > 32 && value < 127)
 		std::cout << "Char: '" << static_cast<char>(value) << "'" << std::endl;
-	else
+	else if ()
 		std::cout << "Char: Non displayble" << std::endl;
 	std::cout << "Int: " << static_cast<int>(value) << std::endl;
 	std::cout << "Float: " << std::fixed << static_cast<float>(value) << std::endl;
