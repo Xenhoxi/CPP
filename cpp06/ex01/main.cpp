@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:42:22 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/19 15:38:25 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/23 10:50:15 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ int main(void)
 	std::cout << someone.name << " is " << someone.age << std::endl;
 	std::cout << "Address before serialize pointer : " << &sameone << std::endl;
 	address = Serializer::serialize(&someone);
-	std::cout << "Address of serialize pointer : " << address << std::endl;
 	sameone = Serializer::deserialize(address);
-	std::cout << "Address after deserialize pointer : " << *sameone << std::endl;
+	std::cout << "Address after deserialize pointer : " << sameone << std::endl;
 	std::cout << sameone->name << " is " << sameone->age << std::endl;
 	return (0);
 }
