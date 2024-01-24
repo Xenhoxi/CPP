@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:41:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/23 13:54:47 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/24 10:13:01 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ void	fromInt(char *str)
 	int	value = std::atoi(str);
 	if (value > 32 && value < 127)
 		std::cout << "Char: '" << static_cast<char>(value) << "'" << std::endl;
-	else
+	else if (value >= -128 && value <= 255)
 		std::cout << "Char: Non displayble" << std::endl;
+	else
+		std::cout << "Char: Overflow" << std::endl;
 	std::cout << "Int: " << value << std::endl;
 	std::cout << "Float: " << std::fixed << static_cast<float>(value) << std::endl;
 	std::cout << "Double: " << static_cast<double>(value) << std::endl;
@@ -55,8 +57,10 @@ void	fromFloat(char *str)
 	float	value = std::atof(str);
 	if (value > 32 && value < 127)
 		std::cout << "Char: '" << static_cast<char>(value) << "'" << std::endl;
-	else
+	else if (value >= -128 && value <= 255)
 		std::cout << "Char: Non displayble" << std::endl;
+	else
+		std::cout << "Char: Overflow" << std::endl;
 	std::cout << "Int: " << static_cast<int>(value) << std::endl;
 	std::cout << "Float: " << std::fixed << value << std::endl;
 	std::cout << "Double: " << static_cast<double>(value) << std::endl;
@@ -67,8 +71,10 @@ void	fromDouble(char *str)
 	double	value = std::atof(str);
 	if (value > 32 && value < 127)
 		std::cout << "Char: '" << static_cast<char>(value) << "'" << std::endl;
-	else if ()
+	else if (value >= -128 && value <= 255)
 		std::cout << "Char: Non displayble" << std::endl;
+	else
+		std::cout << "Char: Overflow" << std::endl;
 	std::cout << "Int: " << static_cast<int>(value) << std::endl;
 	std::cout << "Float: " << std::fixed << static_cast<float>(value) << std::endl;
 	std::cout << "Double: " << static_cast<double>(value) << std::endl;

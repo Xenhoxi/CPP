@@ -16,6 +16,9 @@
 #include <stdint.h>
 #include <string>
 #include <iostream>
+#include <time.h>
+#include "stdlib.h"
+#include <typeinfo>
 
 class Base
 {

@@ -25,32 +25,52 @@ Base *Base::generate(void)
 	random_value = std::rand();
 	random_value = random_value % 3;
 	if (random_value == 0)
-	{	
-		std::cout << "A" << std::endl;
 		return (new A());
-	}
 	else if (random_value == 1)
-	{
-		std::cout << "B" << std::endl;
 		return (new B());
-	}
 	else if (random_value == 2)
-	{
-		std::cout << "C" << std::endl;
 		return (new C());
-	}
 	return (NULL);
 }
 
 void	Base::identify(Base *p)
 {
-	(void) p;
-	return ;
+	if (dynamic_cast<A *>(p))
+		std::cout << "Class is a type A check by ptr" << std::endl;
+	else if (dynamic_cast<B *>(p))
+		std::cout << "Class is a type B check by ptr" << std::endl;
+	else if (dynamic_cast<C *>(p))
+		std::cout << "Class is a type C check by ptr" << std::endl;
+	else
+		std::cout << "Error unrecognized class !" << std::endl;
 }
 
 void	Base::identify(Base &p)
 {
-	(void) p;
+	try
+	{
+		dynamic_cast<A &>(p);
+		std::cout << "Class is a type A check by ref" << std::endl;
+	}
+	catch (std::bad_cast &e)
+	{
+	}
+	try
+	{
+		dynamic_cast<B &>(p);
+		std::cout << "Class is a type B check by ref" << std::endl;
+	}
+	catch (std::bad_cast &e)
+	{
+	}
+	try
+	{
+		dynamic_cast<C &>(p);
+		std::cout << "Class is a type C check by ref" << std::endl;
+	}
+	catch (std::bad_cast &e)
+	{
+	}
 	return ;
 }
 

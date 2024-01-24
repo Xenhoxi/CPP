@@ -5,20 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/23 15:42:22 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/24 10:10:46 by ljerinec         ###   ########.fr       */
+/*   Created: 2024/01/24 13:29:18 by ljerinec          #+#    #+#             */
+/*   Updated: 2024/01/24 13:55:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#include "Iter.hpp"
 
-int main(void)
+int main()
 {
-	Base	doing;
-	Base	*test;
-
-	test = doing.generate();
-	doing.identify(test);
-	doing.identify(*test);
 	return (0);
 }
