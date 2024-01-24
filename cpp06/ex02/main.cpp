@@ -6,26 +6,18 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:42:22 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/23 13:57:32 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:34:07 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
+#include "Base.hpp"
 
 int main(void)
 {
-	Data		someone;
-	Data		*other = NULL;
-	uintptr_t	address = 0;
+	Base	doing;
+	Base	*test;
 
-	someone.name = "Luc";
-	someone.age = 58;
-	std::cout << someone.name << " is " << someone.age << std::endl;
-	std::cout << "Address before serialize pointer : " << &someone << std::endl;
-	address = Serializer::serialize(&someone);
-	std::cout << "Address : " << address << std::endl;
-	other = Serializer::deserialize(address);
-	std::cout << "Address after deserialize pointer : " << other << std::endl;
-	std::cout << other->name << " is " << other->age << std::endl;
+	test = doing.generate();
+	doing.identify(test);
 	return (0);
 }

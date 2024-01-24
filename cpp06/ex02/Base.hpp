@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Base.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -17,23 +17,25 @@
 #include <string>
 #include <iostream>
 
-struct Data
-{
-	std::string name;
-	int			age;
-};
-
-
-class Serializer
+class Base
 {
 public:
-	~Serializer(void);
-	static	uintptr_t	serialize(Data *ptr);
-	static	Data		*deserialize(uintptr_t raw);
-private:
-	Serializer(void);
-	Serializer(const Serializer &src);
-	Serializer &operator=(const Serializer &src);
+	virtual	~Base(void);
+	Base	*generate(void);
+	void	identify(Base *p);
+	void	identify(Base &p);
+};
+
+class A : public Base
+{
+};
+
+class B : public Base
+{
+};
+
+class C : public Base
+{
 };
 
 #endif
