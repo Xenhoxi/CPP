@@ -28,9 +28,8 @@ Base *Base::generate(void)
 		return (new A());
 	else if (random_value == 1)
 		return (new B());
-	else if (random_value == 2)
+	else
 		return (new C());
-	return (NULL);
 }
 
 void	Base::identify(Base *p)

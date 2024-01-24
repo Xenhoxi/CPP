@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:42:22 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/17 14:58:12 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:25:46 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int main(void)
 	}
 	std::cout << bureau_1 << std::endl;
 	std::cout << bureau_2 << std::endl;
-
 	form_3->execute(bureau_2);	
 	return (0);
 }
