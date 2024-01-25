@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 13:29:16 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/25 15:36:02 by ljerinec         ###   ########.fr       */
+/*   Created: 2024/01/24 13:29:18 by ljerinec          #+#    #+#             */
+/*   Updated: 2024/01/25 16:54:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMPARE_HPP
-#define COMPARE_HPP
-
-#include <iostream>
+#include "Array.hpp"
 #include <string>
+#include <iostream>
 
-template<typename T>
-T       add(T something)
+int main()
 {
-    return (something + something); 
+	Array<int> un(10);
+	for (int i = 0; i < 10; i++)
+	{
+		un.array[i] = i + 1;
+		std::cout << un.array[i] << "\n";
+	}
+	std::cout << std::endl; 
+	Array<int> deux(un);
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << deux.array[i] << "\n";
+	}
+	// Array<std::string> (10);
+	return (0);
 }
-
-template<typename T>
-void	iter(T *address, int size, T (*function)(T))
-{
-    int i = -1;
-
-    while (++i < size)
-        address[i] = function(address[i]);
-}
-
-#endif
