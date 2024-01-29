@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:19:18 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/29 10:27:32 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:40:52 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Array
 private:
 	int	_size;
 public:
-	class OutOfBound : std::exception
+	class OutOfBound : public std::exception
 	{
 	public:
 		virtual const char *what() const throw() {
