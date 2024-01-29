@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:19:18 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/25 16:56:40 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:27:32 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,29 @@
 template<typename T>
 class Array
 {
+private:
+	int	_size;
 public:
-	T *array;
-
-	Array<T>()
+	class OutOfBound : std::exception
 	{
-		array = new T[1];
+	public:
+		virtual const char *what() const throw() {
+			return ("Index out of bound !");
+		}
 	};
-	Array<T>(unsigned int n)
+
+	T *array;
+	Array<T>(void) : _size(0)
+	{
+		array = new T[0];
+	};
+	~Array<T>(void)
+	{
+		delete [] array; 
+	};
+	Array<T>(unsigned int n) : _size(n)
 	{
 		array = new T[n];
-		for (size_t i = 0; i < n; i++)
-			std::cout << array[i] << "\n";
 	};
 	Array<T>(const Array<T> &src)
 	{
@@ -38,15 +49,22 @@ public:
 	};
 	Array<T> &operator=(const Array<T> &rhs)
 	{
-		int	i = 0;
-		while (rhs.array[i++]) {
-		}
-		this->array = new T[i];
-		std::cout << "i : " << i << std::endl;
-		for (int u = 0; u < i; u++)
-			this->array[u] = rhs.array[u];
+		_size = rhs._size;
+		array = new T[size()];
+		for (int i = 0; i < size() ; i++)
+			this->array[i] = rhs.array[i];
 		return (*this);
 	};
+	T &operator[](int index)
+	{
+		if (index >= size() || index < 0)
+			throw OutOfBound();
+		return (array[index]);
+	}
+	int	size(void)
+	{
+		return (_size);
+	}
 };
 
 #endif
