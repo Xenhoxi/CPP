@@ -48,26 +48,29 @@ void	Base::identify(Base &p)
 {
 	try
 	{
-		dynamic_cast<A &>(p);
+		A &r = dynamic_cast<A &>(p);
+		(void)r;
 		std::cout << "Class is a type A check by ref" << std::endl;
 	}
-	catch (std::bad_cast &e)
+	catch (std::exception &e)
 	{
 	}
 	try
 	{
-		dynamic_cast<B &>(p);
+		B &r = dynamic_cast<B &>(p);
+		(void)r;
 		std::cout << "Class is a type B check by ref" << std::endl;
 	}
-	catch (std::bad_cast &e)
+	catch (std::exception &e)
 	{
 	}
 	try
 	{
-		dynamic_cast<C &>(p);
+		C &r = dynamic_cast<C &>(p);
+		(void)r;
 		std::cout << "Class is a type C check by ref" << std::endl;
 	}
-	catch (std::bad_cast &e)
+	catch (std::exception &e)
 	{
 	}
 	return ;

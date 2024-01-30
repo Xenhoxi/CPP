@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 15:42:22 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/24 10:10:46 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/30 09:54:24 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ int main(void)
 	test = doing.generate();
 	doing.identify(test);
 	doing.identify(*test);
+	delete test;
 	return (0);
 }
