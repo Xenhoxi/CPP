@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:15:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/30 11:16:20 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/30 13:04:13 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,14 @@ Span::Span(unsigned int N) : _size(N)
 
 Span::Span(const Span &src)
 {
-	(void) src;
-	return ;
+	*this = src;
+}
+
+Span	&Span::operator=(const Span &rhs)
+{
+	_size = rhs._size;
+	_lst = rhs._lst;
+	return (*this);
 }
 
 void	Span::addNumber(int nb)
@@ -38,11 +44,19 @@ void	Span::addNumber(int nb)
 		_lst.push_back(nb);
 }
 
+void	Span::addRange(int first, int last)
+{
+	while (first < last)
+	{
+		addNumber(first);
+		first++;
+	}
+}
+
 int	Span::shortestSpan(void)
 {
 	int span = INT_MAX;
 
-	// std::cout << span << std::endl;
 	_lst.sort();
 	std::list<int>::const_iterator	it;
 	std::list<int>::const_iterator	ite = _lst.end();

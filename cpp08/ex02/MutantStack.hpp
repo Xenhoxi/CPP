@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Span.hpp                                           :+:      :+:    :+:   */
+/*   MutantStack.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,41 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SPAN_HPP
-# define SPAN_HPP
+#ifndef MutantStack_HPP
+# define MutantStack_HPP
 
 #include <string>
 #include <algorithm>
 #include <iostream>
 #include <map>
+#include <stack>
 #include <vector>
 #include <list>
 #include <exception>
 #include "limits.h"
 
-class Span
+template<typename T>
+class MutantStack : public std::stack<T>
 {
 private:
-	unsigned int	_size;
-	std::list<int>	_lst;
-public:
-	Span(void);
-	Span(unsigned int N);
-	Span(const Span &src);
-	Span &operator=(const Span &rhs);
-	~Span(void);
-	void	addNumber(int nb);
-	void	addRange(int first, int last);
-	int		shortestSpan(void);
-	int		longestSpan(void);
 
-	class Full : public std::exception
+public:
+	MutantStack(void) 
 	{
-	public:
-		virtual const char *what() const throw()
-		{
-			return ("List of integer is full !");
-		}
+
+	};
+	MutantStack(const MutantStack &src) 
+	{
+		*this = src;
+	};
+	MutantStack &operator=(const MutantStack &rhs) 
+	{
+		return (*this);
+	};
+	virtual ~MutantStack(void) 
+	{
+
+	};
+	T	iterator()
+	{
+
 	};
 };
 

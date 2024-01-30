@@ -6,27 +6,35 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:50:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/30 13:04:44 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/30 13:03:43 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Span.hpp"
+#include "MutantStack.hpp"
 
 int main(void)
 {
-	int n = 100000;
-	Span sp = Span(n);
+	MutantStack<int> mstack;
 
-	try
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	mstack.push(0);
+
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
 	{
-		sp.addRange(0, n);
-		// sp.addNumber(-90000);
+	std::cout << *it << std::endl;
+	++it;
 	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
+	std::stack<int> s(mstack);
 	return (0);
 }
