@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:15:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/29 15:57:53 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:16:20 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,25 @@ void	Span::addNumber(int nb)
 		throw Full();
 	else
 		_lst.push_back(nb);
-	std::for_each(_lst.begin(), _lst.end(), ft_print_int);
-	std::cout << std::endl;
 }
 
 int	Span::shortestSpan(void)
 {
 	int span = INT_MAX;
 
+	// std::cout << span << std::endl;
 	_lst.sort();
 	std::list<int>::const_iterator	it;
 	std::list<int>::const_iterator	ite = _lst.end();
 	std::list<int>::const_iterator	tmp = _lst.begin();
 	++tmp;
-	for (it = _lst.begin(); it != ite; ++it)
+	for (it = _lst.begin(); it != ite; it++)
 	{
+		if (*tmp - *(it) < span)
+			span = *tmp - *(it);
 		tmp++;
-		if ((*(++tmp) - *it) < span)
-			span = *(++it) - *it;
+		if (tmp == ite)
+			return (span);
 	}
 	return (span);
 }

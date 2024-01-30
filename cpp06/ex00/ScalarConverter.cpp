@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 11:41:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/24 10:13:01 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:19:53 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	fromChar(char *str)
 	char	value = *str;
 	
 	if (value > 32 && value < 127)
-		std::cout << "Char: " << value << std::endl;
+		std::cout << "Char: '" << value << "'" << std::endl;
 	else
 		std::cout << "Char: Non displayble" << std::endl;
 	std::cout << "Int: " << static_cast<int>(value) << std::endl;
@@ -43,7 +43,7 @@ void	fromInt(char *str)
 	int	value = std::atoi(str);
 	if (value > 32 && value < 127)
 		std::cout << "Char: '" << static_cast<char>(value) << "'" << std::endl;
-	else if (value >= -128 && value <= 255)
+	else if (value < 32 || value == 128)
 		std::cout << "Char: Non displayble" << std::endl;
 	else
 		std::cout << "Char: Overflow" << std::endl;
@@ -57,7 +57,7 @@ void	fromFloat(char *str)
 	float	value = std::atof(str);
 	if (value > 32 && value < 127)
 		std::cout << "Char: '" << static_cast<char>(value) << "'" << std::endl;
-	else if (value >= -128 && value <= 255)
+	else if (value < 32 || value == 128)
 		std::cout << "Char: Non displayble" << std::endl;
 	else
 		std::cout << "Char: Overflow" << std::endl;
@@ -71,7 +71,7 @@ void	fromDouble(char *str)
 	double	value = std::atof(str);
 	if (value > 32 && value < 127)
 		std::cout << "Char: '" << static_cast<char>(value) << "'" << std::endl;
-	else if (value >= -128 && value <= 255)
+	else if (value < 32 || value == 128)
 		std::cout << "Char: Non displayble" << std::endl;
 	else
 		std::cout << "Char: Overflow" << std::endl;
@@ -103,6 +103,8 @@ void	others(char *str)
 		std::cout << "Float: +inff" << std::endl;
 		std::cout << "Double: +inf" << std::endl;
 	}
+	else
+		std::cout << "Unrecognized symbole try something else !" << std::endl;
 }
 
 void	ScalarConverter::convert(char *str)

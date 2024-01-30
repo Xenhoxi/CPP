@@ -6,19 +6,19 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:22:23 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/29 12:23:19 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/30 10:46:40 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIND_HPP
 # define FIND_HPP
 
+#include <iostream>
 #include <string>
 #include <algorithm>
-#include <iostream>
-#include <map>
-#include <vector>
 #include <list>
+#include <vector>
+#include <map>
 #include <exception>
 
 class NotFind : public std::exception

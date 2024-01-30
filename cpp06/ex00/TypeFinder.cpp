@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:41:10 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/18 12:19:52 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:21:24 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int isFloat(char *str)
 	while ((size_t)++i < strlen(str) - 1)
 		if (!isdigit(str[i]) && str[i] != '.')
 			return (0);
-	if (str[i] == 'f')
+	if (str[i] == 'f' && strlen(str) > 1)
 		return (1);
 	else
 		return (0);

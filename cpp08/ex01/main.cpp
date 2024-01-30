@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:50:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/29 15:55:51 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/01/30 11:19:26 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int main(void)
 {
-	Span sp = Span(5);
+	int n = 100000;
+	Span sp = Span(n);
 
 	try
 	{
-		sp.addNumber(1);
-		sp.addNumber(52);
-		sp.addNumber(63);
-		sp.addNumber(87);
+		for (int i = 0; i < n - 1;i++)
+			sp.addNumber(i * 3);
+		sp.addNumber(-90000);
 	}
 	catch (std::exception &e)
 	{
