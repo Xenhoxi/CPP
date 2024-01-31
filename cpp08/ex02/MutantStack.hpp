@@ -20,6 +20,8 @@
 #include <stack>
 #include <vector>
 #include <list>
+#include <deque>
+#include <queue>
 #include <exception>
 #include "limits.h"
 
@@ -43,11 +45,15 @@ public:
 	};
 	virtual ~MutantStack(void) 
 	{
-
 	};
-	T	iterator()
+	typedef typename std::deque<T>::iterator iterator;
+	iterator	begin()
 	{
-
+		return (this->c.begin());
+	};
+	iterator	end()
+	{
+		return (this->c.end());
 	};
 };
 
