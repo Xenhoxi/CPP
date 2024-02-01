@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 13:37:56 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/02/01 14:35:08 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/01 15:09:40 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,15 @@ public:
     virtual const char *what() const throw()
     {
         return ("File does not exist or cannot be open !");
+    }
+};
+
+class BadInput : public std::exception 
+{
+public:
+    virtual const char *what() const throw()
+    {
+        return ("bad input => ");
     }
 };
 
