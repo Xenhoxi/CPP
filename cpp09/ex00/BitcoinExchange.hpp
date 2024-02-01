@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 13:37:56 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/31 14:15:59 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:35:08 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define BITCOINEXCHANGE_HPP
 
 #include <iomanip>
+#include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -27,5 +28,15 @@
 #include <queue>
 #include <exception>
 #include "limits.h"
+
+class FileNotOpen : public std::exception 
+{
+public:
+    virtual const char *what() const throw()
+    {
+        return ("File does not exist or cannot be open !");
+    }
+};
+
 
 #endif
