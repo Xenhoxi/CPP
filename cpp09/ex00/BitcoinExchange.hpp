@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 13:37:56 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/02/01 15:09:40 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/03 23:52:19 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@
 #include <exception>
 #include "limits.h"
 
+void	read_input(const char *filename, std::map<std::string, double> &dataBase);
+void	fill_dataBase(std::map<std::string, double> &dataBase);
+
 class FileNotOpen : public std::exception 
 {
 public:
@@ -47,5 +50,22 @@ public:
     }
 };
 
+class AmountTooHigh : public std::exception 
+{
+public:
+    virtual const char *what() const throw()
+    {
+        return ("too large number.");
+    }
+};
+
+class NotPositive : public std::exception 
+{
+public:
+    virtual const char *what() const throw()
+    {
+        return ("Not a positiv number.");
+    }
+};
 
 #endif
