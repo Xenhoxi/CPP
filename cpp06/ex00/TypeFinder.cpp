@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 11:41:10 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/25 14:21:24 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:01:15 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,28 @@
 
 int	isInt(char *str)
 {
-	int	i = -1;
+	int	i = 0;
 
-	while (str[++i])
-		if (!isdigit(str[i]))
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i])
+		if (!isdigit(str[i++]))
 			return (0);
 	return (1);
 }
 
 int isDouble(char *str)
 {
-	int	i = -1;
+	int	i = 0;
 
-	while (str[++i])
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i])
+	{
 		if (!isdigit(str[i]) && str[i] != '.')
 			return (0);
+		i++;
+	}
 	return (1);
 }
 
