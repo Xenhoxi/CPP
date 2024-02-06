@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 12:13:44 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/02/05 14:19:04 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/06 10:03:52 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@
 #include <exception>
 #include <sstream>
 #include "limits.h"
+
+void	computeRPN(std::stack<double> &rpn, std::string input);
+void	checkValidity(std::string input);
 
 class ErrorMsg : public std::exception 
 {
