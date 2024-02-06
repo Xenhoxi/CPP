@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:19:18 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/01/29 10:40:52 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/06 11:36:01 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Array
 {
 private:
 	int	_size;
+	T *array;
 public:
 	class OutOfBound : public std::exception
 	{
@@ -30,7 +31,6 @@ public:
 		}
 	};
 
-	T *array;
 	Array<T>(void) : _size(0)
 	{
 		array = new T[0];
