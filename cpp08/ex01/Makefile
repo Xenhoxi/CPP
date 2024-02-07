@@ -6,11 +6,11 @@
 #    By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 22:47:45 by ljerinec          #+#    #+#              #
-#    Updated: 2024/01/29 14:58:21 by ljerinec         ###   ########.fr        #
+#    Updated: 2024/02/07 13:05:06 by ljerinec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CXX = g++
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SOURCES =	main.cpp \

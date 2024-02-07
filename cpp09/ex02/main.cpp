@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:50:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/02/06 11:57:51 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/07 10:27:30 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ bool	isNumber(std::string str)
 
 void	checkNumbers(char **argv)
 {
-	int i = -1;
+	int i = 0;
 	while (argv[++i])
 		if (!isNumber(argv[i]))
 			throw ErrorMsg("Not a positiv numbers or not a number in the list !");

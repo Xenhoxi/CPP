@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 10:02:55 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/02/06 10:05:11 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/07 14:45:45 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,15 @@ void	checkValidity(std::string input)
 
 	while (iss >> splited)
 	{
-		if (isNumber(splited))
-			nb++;
-		else if (isOperator(splited))
+		if (isOperator(splited))
 			operators++;
+		else if (std::atoi(splited.c_str()) >= 0 && std::atoi(splited.c_str()) < 10)
+			nb++;
+		else
+			throw ErrorMsg("Error: Not a valid digit.");
 	}
 	if (nb != operators + 1 || operators <= 0)
-		throw ErrorMsg("Error : Invalid notation.");
+		throw ErrorMsg("Error: Invalid notation.");
 }
 
 void	computeRPN(std::stack<double> &rpn, std::string input)
@@ -69,14 +71,16 @@ void	computeRPN(std::stack<double> &rpn, std::string input)
 			else if (splited == "*")
 				result = rpn.top() * tmp;
 			else if (splited == "/")
+			{
+				if (tmp == 0)
+					throw ErrorMsg("Error: Impossible to divide by 0.");
 				result = rpn.top() / tmp;
+			}
 			rpn.pop();
 			rpn.push(result);
 		}
+		else
+			throw ErrorMsg("Error: Invalid notation.");
 	}
-	rpn.pop();
-	if (!rpn.size())
-		std::cout << result <<std::endl;
-	else
-		std::cout << "Error : Invalid notation." << std::endl;
+	std::cout << rpn.top() << std::endl;
 }
