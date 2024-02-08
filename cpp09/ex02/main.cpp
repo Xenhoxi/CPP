@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:50:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/02/08 14:56:24 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:07:08 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,14 @@ void	sortVector(char **argv)
 		VecBig.push_back(VecSmall[i]);
 		VecSmall.erase(VecSmall.begin() + i);
 	}
+	// mergeSort();
 	printVec(VecSmall);
 	printVec(VecBig);
 }
+
+// Listes des grand elements (VecBig) sont trie par le merge recusive sort
+// puis insertion des petits elements (VecSmall) dans les grand elements avec les binary shearch
+
 
 // 5 3 4 9 1 2
 // 3 5 4 9 1 2
