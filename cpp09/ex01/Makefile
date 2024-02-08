@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CXX = g++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 SOURCES =	main.cpp \
 			RPN.cpp \
