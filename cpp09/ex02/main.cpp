@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:50:37 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/02/08 23:07:08 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/09 15:31:55 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,49 +46,62 @@ void	printVec(std::vector<unsigned int> Vec)
 	std::cout << std::endl;
 }
 
+size_t	binarySearch(std::vector<unsigned int> res, unsigned int nb)
+{
+	if (res[res.size() - 1] < nb)
+		return (res.size());
+	if (res[0] > nb)
+		return (0);
+	size_t	first = 0;
+	size_t	last = res.size();
+	size_t	mid = (first + (last - first) / 2);
+	while (first != mid && mid != last)
+	{
+		if (nb == res[mid])
+			return (mid);
+		if (nb < res[mid])
+			last = mid;
+		else if (nb > res[mid])
+			first = mid;
+		mid = (first + (last - first) / 2);
+	}
+	return (mid + 1);
+}
+
+void	mergeSort(std::vector<unsigned int>	&Vec)
+{
+	if (Vec.size() <= 1)
+		return ;
+
+	for (size_t u = 0; u + 1 < Vec.size(); u += 2)
+	{
+		if (Vec[u] > Vec[u + 1])
+			std::swap(Vec[u], Vec[u + 1]);
+	}
+	std::vector<unsigned int> res;
+	for (size_t i = 1; i + 1 <= Vec.size(); i += 2)
+		res.push_back(Vec[i]);
+	mergeSort(res);
+	for (size_t i = 0; i < Vec.size(); i += 2)
+		res.insert(res.begin() + binarySearch(res, Vec[i]), Vec[i]);
+	Vec = res;
+}
+
 void	sortVector(char **argv)
 {
-	std::vector<unsigned int>	VecSmall;
-	std::vector<unsigned int>	VecBig;
+	std::vector<unsigned int>	Vec;
 	int							i = 0;
 
 	while (argv[++i])
-		VecSmall.push_back(atoi(argv[i]));
-	std::vector<unsigned int>::iterator it = VecSmall.begin();
-	std::vector<unsigned int>::iterator it2 = VecSmall.begin();
-	it2++;
-	std::vector<unsigned int>::iterator ite = VecSmall.end();
-	while (it != ite || it2 != ite)
-	{
-		if (it == ite || it2 == ite)
-			break ;
-		if (*it > *it2)
-			std::swap(*it, *it2);
-		it += 2;
-		it2 += 2;
-	}
-	for (size_t i = 1; i < VecSmall.size(); ++i)
-	{
-		VecBig.push_back(VecSmall[i]);
-		VecSmall.erase(VecSmall.begin() + i);
-	}
-	// mergeSort();
-	printVec(VecSmall);
-	printVec(VecBig);
+		Vec.push_back(atoi(argv[i]));
+
+	clock_t start = clock();
+	mergeSort(Vec);
+	clock_t end = clock();
+	printVec(Vec);
+	double duration = static_cast<double>(end - start) / CLOCKS_PER_SEC;
+	std::cout << std::fixed << std::setprecision(2) << duration << std::endl;
 }
-
-// Listes des grand elements (VecBig) sont trie par le merge recusive sort
-// puis insertion des petits elements (VecSmall) dans les grand elements avec les binary shearch
-
-
-// 5 3 4 9 1 2
-// 3 5 4 9 1 2
-
-// 3 5 4        ||   9 1 2
-// 3 5 4	    ||   1 9 2
-
-// 3 4			||	 1 2
-// 5            ||	 9
 
 int main(int argc, char **argv)
 {
