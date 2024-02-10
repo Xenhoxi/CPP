@@ -6,7 +6,7 @@
 /*   By: ljerinec <ljerinec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 12:13:44 by ljerinec          #+#    #+#             */
-/*   Updated: 2024/02/08 14:04:44 by ljerinec         ###   ########.fr       */
+/*   Updated: 2024/02/10 20:46:57 by ljerinec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,16 @@
 #include <sstream>
 #include "limits.h"
 
-void	computeRPN(std::stack<double> &rpn, std::string input);
-void	checkValidity(std::string input);
+size_t	binarySearch(std::vector<unsigned int> res, unsigned int nb);
+void	printVec(std::vector<unsigned int> Vec);
+void	printBefore(char **argv);
+void	checkNumbers(char **argv);
+bool	isNumber(std::string str);
+void	mergeSortDeque(std::vector<unsigned int>	&Vec);
+void	mergeSortVector(std::vector<unsigned int>	&Vec);
+size_t	binarySearchDeque(std::vector<unsigned int> res, unsigned int nb);
+size_t	binarySearchVector(std::vector<unsigned int> res, unsigned int nb);
+
 
 class ErrorMsg : public std::exception 
 {
